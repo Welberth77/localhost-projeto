@@ -93,7 +93,8 @@ h3 {
     font-family: 'dosis', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    padding: 4px 20px;
+    width: 103px;
+    height: 32px;
     border-radius: 30px;
     border: none;
 }
