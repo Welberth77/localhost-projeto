@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>LocalHost - Detalhe do Produto</title>
+</head>
+<body>
+    <div class="detalhe-page">
+
+        <header class="detalhe-header">
+            <a href="produtos.html" class="voltar-btn">Voltar</a>
+            <img src="img/logo-localhost.png" alt="Logo LocalHost" class="header-logo">
+        </header>
+
+        <div class="produto-imagem-wrapper">
+            <img src="img/burguer.jpg" alt="C++ Burguer" class="produto-imagem">
+        </div>
+
+        <span class="categoria-badge">Hamburguer</span>
+
+        <div class="produto-info">
+            <h1 class="produto-nome">C++ Burguer</h1>
+            <span class="produto-preco">R$ 28,99;</span>
+        </div>
+
+        <div class="descricao-section">
+            <h2 class="section-title">Descrição do Produto</h2>
+            <div class="divider"></div>
+            <pre class="code-block"><span class="c-comment">// Ingredientes do Burguer</span>
+<span class="c-keyword">class</span> <span class="c-class">Burger</span> : <span class="c-keyword">public</span> <span class="c-class">Satisfaction</span> {
+  <span class="c-type">double</span> carne = <span class="c-number">180.0</span>; <span class="c-comment">// 180g smash</span>
+  <span class="c-type">string</span>[] extras = {<span class="c-string">"Cheddar"</span>,<span class="c-string">"Bacon"</span>,
+  <span class="c-string">"Alface"</span>,<span class="c-string">"Tomate"</span>,<span class="c-string">"Picles"</span>,<span class="c-string">"Molho"</span>};
+  <span class="c-comment">// Servido com fritas por padrao</span>
+};</pre>
+        </div>
+
+        <div class="commit-section">
+            <h2 class="section-title">Commit</h2>
+            <div class="divider"></div>
+            <textarea class="commit-textarea" placeholder="//commit"></textarea>
+        </div>
+
+        <div class="quantidade-section">
+            <span class="quantidade-label">Quantidade</span>
+            <div class="quantidade-controles">
+                <button class="qty-btn">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn">+</button>
+                <button class="git-add-btn">Git add</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

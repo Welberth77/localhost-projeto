@@ -33,3 +33,193 @@ body {
     color: #000000;
     margin-top: 35px;
 }
+
+/* ── Detalhe do Produto ── */
+
+.detalhe-page {
+    width: 402px;
+    min-height: 100vh;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 32px;
+    box-sizing: border-box;
+}
+
+.detalhe-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 18px 0 12px;
+}
+
+.voltar-btn {
+    position: absolute;
+    left: 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+}
+
+.header-logo {
+    height: 44px;
+}
+
+.produto-imagem-wrapper {
+    width: 100%;
+    height: 210px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    margin-bottom: 16px;
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.categoria-badge {
+    display: inline-block;
+    background-color: #1a3320;
+    color: #4ade80;
+    font-size: 11px;
+    font-family: 'Fira Code', monospace;
+    padding: 4px 14px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.produto-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.produto-nome {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+}
+
+.produto-preco {
+    color: #ffffff;
+    font-size: 13px;
+    font-family: 'Fira Code', monospace;
+    white-space: nowrap;
+}
+
+.section-title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    font-family: 'Fira Code', monospace;
+}
+
+.divider {
+    height: 1px;
+    background-color: #2a2a2a;
+    margin-bottom: 14px;
+}
+
+.code-block {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    line-height: 1.9;
+    color: #ffffff;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.c-comment { color: #6b7280; }
+.c-keyword  { color: #e5914e; }
+.c-type     { color: #e5914e; }
+.c-class    { color: #ffffff; }
+.c-number   { color: #7dd3fc; }
+.c-string   { color: #f0a040; }
+
+.descricao-section {
+    margin-bottom: 20px;
+}
+
+.commit-section {
+    margin-bottom: 20px;
+}
+
+.commit-textarea {
+    width: 100%;
+    height: 90px;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    color: #6b7280;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    padding: 14px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+}
+
+.commit-textarea::placeholder {
+    color: #4b5563;
+}
+
+.quantidade-label {
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 12px;
+}
+
+.quantidade-controles {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.qty-btn {
+    width: 36px;
+    height: 36px;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-num {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Fira Code', monospace;
+    min-width: 16px;
+    text-align: center;
+}
+
+.git-add-btn {
+    flex: 1;
+    height: 46px;
+    background-color: #00cfc8;
+    border: none;
+    border-radius: 100px;
+    color: #000000;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
