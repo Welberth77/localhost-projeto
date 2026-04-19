@@ -39,6 +39,7 @@ h2 {
     align-items: flex-start;
     margin-bottom: 39px;
     gap: 11px;
+    width: 95%;
 }
 
 .item-detalhes {
@@ -46,8 +47,9 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     height: 120px;
-    min-width: 220px;
+    width: 220px;
 }
+
 
 h3 {
     font-family: 'roboto', sans-serif;
