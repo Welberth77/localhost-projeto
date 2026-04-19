@@ -15,32 +15,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Localhost - Cardápio</title>
+    <link rel="stylesheet" href="header-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <!-- Pessoa 01 coloca o código aqui -->
-        <!-- Criar o cabeçalho padrão do site com logo, nome da loja e menu de navegação. -->
-        <!-- Cada item do menu deve abrir uma página diferente, pois cada categoria
-        terá produtos e preços próprios.
+    <header> <!-- Igor - Cabeçalho padrão com logo e menu de navegação -->
+        <div class="header-logo-wrap">
+            <div class="header-logo-card">
+                <a href="index.html" aria-label="Localhost — Início">
+                    <img src="img/logo-localhost-cinza.png" alt="Logo LocalHost">
+                </a>
+            </div>
+        </div>
 
-        Links necessários:
-        Home               -> index.html
-        Mais Vendidos      -> produtos.html
-        Hambúrgueres       -> hamburgueres.html
-        Pizzas             -> pizzas.html
-        Bebidas            -> bebidas.html
-        Acompanhamentos    -> acompanhamentos.html
-        Sobre Nós          -> sobre.html
+        <nav class="header-nav" aria-label="Categorias do cardápio">
+            <a href="produtos.html"          class="nav-tab active">Mais Vendidos</a>
+            <a href="hamburgueres.html"      class="nav-tab">Hambúrgueres</a>
+            <a href="pizzas.html"            class="nav-tab">Pizzas</a>
+            <a href="bebidas.html"           class="nav-tab">Bebidas</a>
+            <a href="acompanhamentos.html"   class="nav-tab">Acompanhamentos</a>
+        </nav>
 
-        Exemplo:
-
-        <nav>
-        <a href="index.html">Home</a>
-        <a href="hamburgueres.html">Hambúrgueres</a>
-        <a href="pizzas.html">Pizzas</a>
-        </nav> -->
+        <script>
+        // Rola automaticamente até a tab ativa
+        const activeTab = document.querySelector('.nav-tab.active');
+        if (activeTab) {
+            activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+        </script>
     </header>
     <main>
+        
         <section class="produtos">
             <div class="menu-container">
                 <h2>Mais Vendidos</h2>
