@@ -5,11 +5,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 }
 
 .start-page {
     width: 402px;
-    height: 874px;
+    height: 100vh;
     background-color: #121212;
     display: flex;
     flex-direction: column;
