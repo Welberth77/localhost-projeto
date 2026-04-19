@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cardapio.css">
+    <!-- Fonte roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">    
+    <!-- Fonte Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonte Dosis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Localhost - Cardápio</title>
 </head>
 <body>
@@ -30,7 +41,50 @@
         </nav> -->
     </header>
     <main>
-
+        <section class="produtos">
+            <div class="menu-container">
+                <h2>Mais Vendidos</h2>
+                <!-- PRODUTO 1 -->
+                <div class="item-card">
+                    <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>C++ Burguer</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">class</span> Burger : <span class="roxo">public</span> Satisfaction { <br>
+                                    &nbsp;&nbsp;<span class="roxo">public</span>: <span class="ciano">double</span> carne = <span class="ciano">180.0</span>, queijo = <span class="ciano">2.0</span>; <br>
+                                };
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 28.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 2 -->
+                <div class="item-card">
+                    <img src="img/produtos/PHPizza.png" alt="PHPizza" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>PHPizza</h3>
+                            <code class="code-descricao">
+                                <span class="vermelho">$ingredientes</span> = [<span class="ciano">"Pepperoni"</span>, <span class="ciano">"Mussarela"</span>, <br> <span class="ciano">"Molho"</span>]; <br>
+                                <span class="roxo">foreach</span> (<span class="vermelho">$ingredientes</span> <span class="roxo">as</span> <span class="vermelho">$i</span>) <span class="roxo">echo</span> <span class="vermelho">$i</span>;
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 29.99;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>

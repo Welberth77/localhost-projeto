@@ -1,0 +1,97 @@
+body {
+    background-color: #ffffff; /* Fundo preto */
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'roboto', sans-serif;
+    margin-left: 14px;
+    margin-bottom: 27px;;
+    color: #ffffff;
+}
+
+.produtos {
+    width: 402px;
+    height: 100vh;
+    background-color: #121212;
+}
+
+.menu-container {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0px 14px 0px 14px;
+}
+
+.item-card {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 39px;
+    gap: 11px;
+}
+
+.item-detalhes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    min-width: 220px;
+}
+
+h3 {
+    font-family: 'roboto', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.code-descricao {
+    margin-top: 5px;
+    font-family: 'fira code', monospace;
+    color: #ffffff; 
+    font-size: 8px;
+    font-weight: bold;
+    display: block;
+}
+
+
+/* Cores do code descrição */
+.roxo { color: #BB86FC; }
+.ciano { color: #03DAC6; }
+.vermelho { color: #F95151; }
+
+
+/* Rodapé do Card (Coração e Preço) */
+.footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.heart-icon {
+    width: 20px;
+    cursor: pointer;
+}
+
+.botao-preco {
+    background-color: #1E1E1E;
+    color: #FF8C00; 
+    font-family: 'dosis', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 4px 20px;
+    border-radius: 30px;
+    border: none;
+}
