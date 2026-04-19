@@ -85,6 +85,11 @@ h3 {
 .heart-icon {
     width: 20px;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.heart-icon:active {
+    transform: scale(1.2); /* Dá um leve "pulo" quando clica */
 }
 
 .botao-preco {
