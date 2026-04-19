@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cardapio.css">
+    <!-- Fonte roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">    
+    <!-- Fonte Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonte Dosis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Localhost - Cardápio</title>
 </head>
 <body>
@@ -30,7 +41,100 @@
         </nav> -->
     </header>
     <main>
-
+        <section class="produtos">
+            <div class="menu-container">
+                <h2>Bebidas</h2>
+                <!-- PRODUTO 1 -->
+                <div class="item-card">
+                    <img src="img/produtos/soft-cpp.png" alt="Soft.cpp" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Soft.cpp</h3>
+                            <code class="code-descricao">
+                                <span class="azul">string</span> sabores[] = {<span class="ciano">"Coca"</span>, <span class="ciano">"Guaraná"</span>, <span class="ciano">"Fanta"</span>}; <br>
+                                <span class="roxo">for</span> (<span class="roxo">auto</span> s : sabores) drink.addIce(s);
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 05.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 2 -->
+                <div class="item-card">
+                    <img src="img/produtos/suco-git.png" alt="Suco-Git" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Suco-Git</h3>
+                            <code class="code-descricao">
+                                git checkout -b <span class="ciano">"Suco_Laranja"</span> <br>
+                                git add gelo acucar <br>
+                                git commit -m <span class="ciano">"Suco extraido com sucesso"</span>
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 04.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 3 -->
+                <div class="item-card">
+                    <img src="img/produtos/java-coffee.png" alt="Java Coffee" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Java Coffee</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">while</span> (!brain.isWorking()) { <br>
+                                &nbsp;&nbsp;me.drink(<span class="roxo">new</span> Coffee()); <br>
+                                } <br>
+                                <span class="cinza">// Heap space: Full energy</span>
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 02.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 4 -->
+                <div class="item-card">
+                    <img src="img/produtos/agua.png" alt="index.html" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>index.html</h3>
+                            <code class="code-descricao">
+                                &lt;<span class="vermelho">div</span> <span class="laranja">class</span>=<span class="ciano">"copo"</span>&gt; <br>
+                                &nbsp;&nbsp;&lt;<span class="vermelho">span</span> <span class="laranja">id</span>=<span class="ciano">"h2o"</span>&gt;Mineral Natural&lt;/<span class="vermelho">span</span>&gt; <br>
+                                &lt;/<span class="vermelho">div</span>&gt;
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 01.99;</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
     </main>
+    <script>
+        // Seleciona todos os ícones de coração
+        const hearts = document.querySelectorAll('.heart-icon');
+
+        hearts.forEach(heart => {
+            heart.addEventListener('click', function() {
+                // Verifica se a imagem atual é a do coração vazio
+                if (this.src.includes('coracao-vazio.png')) {
+                    this.src = 'img/coracao-cheio.png';
+                    this.alt = 'coracao cheio';
+                } else {
+                    this.src = 'img/coracao-vazio.png';
+                    this.alt = 'coracao vazio';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
