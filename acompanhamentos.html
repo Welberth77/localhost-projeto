@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cardapio.css">
+    <!-- Fonte roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">    
+    <!-- Fonte Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonte Dosis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Localhost - Cardápio</title>
     <link rel="stylesheet" href="header-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -34,7 +45,101 @@
         </script>
     </header>
     <main>
-
+        <section class="produtos">
+            <div class="menu-container">
+                <h2>Acompanhamentos</h2>
+                <!-- PRODUTO 1 -->
+                <div class="item-card">
+                    <img src="img/produtos/js-fries.png" alt="JS Fries" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>JS Fries</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">const</span> fries = <span class="azul">Array</span>(<span class="laranja">50</span>).fill('🍟'); <br>
+                                fries.forEach(f => me.eat(f)); <br>
+                                <span class="azul">console</span>.log(<span class="ciano">"Status: 200 OK (Satisfied)"</span>);
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 12.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 2 -->
+                <div class="item-card">
+                    <img src="img/produtos/nuggets.png" alt="Nuggets++" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Nuggets++</h3>
+                            <code class="code-descricao">
+                                Nuggets crispy = Nuggets::create(<span class="laranja">10</span>); <br>
+                                crispy.dip(BarbecueSauce); <br>
+                                <span class="roxo">return</span> crispy.isDelicious();
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 15.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 3 -->
+                <div class="item-card">
+                    <img src="img/produtos/onion.png" alt="Onion.py" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Onion.py</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">for</span> ring <span class="roxo">in</span> onion_rings: <br>
+                                &nbsp;&nbsp;me.consume(ring) <br>
+                                <span class="cinza"># Camadas de sabor otimizadas</span>
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 12.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 4 -->
+                <div class="item-card">
+                    <img src="img/produtos/rust-ica.png" alt="Rust-ica" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Rust-ica</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">let</span> batata = Rustica::new(<span class="ciano">"Crocante"</span>); <br>
+                                <span class="roxo">match</span> batata.flavor() { <br>
+                                &nbsp;&nbsp;Good => <span class="azul">println!</span>(<span class="ciano">"Safe and Tasty!"</span>), <br>
+                                }
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 14.99;</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
     </main>
+    <script>
+        // Seleciona todos os ícones de coração
+        const hearts = document.querySelectorAll('.heart-icon');
+
+        hearts.forEach(heart => {
+            heart.addEventListener('click', function() {
+                // Verifica se a imagem atual é a do coração vazio
+                if (this.src.includes('coracao-vazio.png')) {
+                    this.src = 'img/coracao-cheio.png';
+                    this.alt = 'coracao cheio';
+                } else {
+                    this.src = 'img/coracao-vazio.png';
+                    this.alt = 'coracao vazio';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

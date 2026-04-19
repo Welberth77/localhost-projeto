@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cardapio.css">
+    <!-- Fonte roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">    
+    <!-- Fonte Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonte Dosis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Localhost - Cardápio</title>
     <link rel="stylesheet" href="header-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -34,7 +45,109 @@
         </script>
     </header>
     <main>
-
+        <section class="produtos">
+            <div class="menu-container">
+                <h2>Hambúrgueres</h2>
+                <!-- PRODUTO 1 -->
+                <div class="item-card">
+                    <img src="img/produtos/pyburguer.png" alt="PyBurguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>PyBurguer</h3>
+                            <code class="code-descricao">
+                                ingredientes = [<span class="ciano">"180g carne"</span>, <span class="ciano">"cheddar_melted"</span>, <br> 
+                                <span class="ciano">"pao_brioche"</span>] <br>
+                                print(<span class="ciano">"SatisfactionLevel: CRITICAL_MAX"</span>)
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 22.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 2 -->
+                <div class="item-card">
+                    <img src="img/produtos/fullstack-burguer.png" alt="FullStack Burguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>FullStack Burguer</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">const</span> stack = [<span class="ciano">'Pão</span>, <span class="ciano">'2x Carne'</span>, <span class="ciano">'Ovo'</span>, <span class="ciano">'Bacon'</span>]; <br>
+                                stack.push(<span class="ciano">'Queijo'</span>); <br>
+                                return stack.render();
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 34.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 3 -->
+                <div class="item-card">
+                    <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>C++ Burguer</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">class</span> Burger : <span class="roxo">public</span> Satisfaction { <br>
+                                    &nbsp;&nbsp;<span class="roxo">public</span>: <span class="ciano">double</span> carne = <span class="ciano">180.0</span>, queijo = <span class="ciano">2.0</span>; <br>
+                                };
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 28.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 4 -->
+                <div class="item-card">
+                    <img src="img/produtos/bacon.png" alt="Bacon#" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Bacon#</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">var</span> bacon = <span class="roxo">new</span> Ingredient("<span class="ciano">Crocante</span>"); <br>
+                                <span class="roxo">while</span> (hungry) { <br>
+                                    &nbsp;&nbsp;me.eat(bacon); <br>
+                                }
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 25.99;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <script>
+        // Seleciona todos os ícones de coração
+        const hearts = document.querySelectorAll('.heart-icon');
+
+        hearts.forEach(heart => {
+            heart.addEventListener('click', function() {
+                // Verifica se a imagem atual é a do coração vazio
+                if (this.src.includes('coracao-vazio.png')) {
+                    this.src = 'img/coracao-cheio.png';
+                    this.alt = 'coracao cheio';
+                } else {
+                    this.src = 'img/coracao-vazio.png';
+                    this.alt = 'coracao vazio';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
