@@ -1,61 +1,79 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalHost - Detalhe do Produto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>LocalHost - Detalhe do Produto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Fira+Code:wght@300;400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="detalhe-page">
 
+        <!-- HEADER -->
         <header class="detalhe-header">
             <a href="produtos.html" class="voltar-btn">Voltar</a>
             <img src="img/logo-localhost.png" alt="Logo LocalHost" class="header-logo">
         </header>
 
+        <!-- IMAGEM DO PRODUTO -->
         <div class="produto-imagem-wrapper">
-            <img src="img/burguer.jpg" alt="C++ Burguer" class="produto-imagem">
+            <img src="img/burguer.png" alt="C++ Burguer" class="produto-imagem">
         </div>
 
+        <!-- CHIP DE CATEGORIA -->
         <span class="categoria-badge">Hamburguer</span>
 
+        <!-- NOME + PREÇO -->
         <div class="produto-info">
             <h1 class="produto-nome">C++ Burguer</h1>
             <span class="produto-preco">R$ 28,99;</span>
         </div>
 
+        <!-- DESCRIÇÃO DO PRODUTO -->
         <div class="descricao-section">
-            <h2 class="section-title">Descrição do Produto</h2>
             <div class="divider"></div>
-            <pre class="code-block"><span class="c-comment">// Ingredientes do Burguer</span>
-<span class="c-keyword">class</span> <span class="c-class">Burger</span> : <span class="c-keyword">public</span> <span class="c-class">Satisfaction</span> {
-  <span class="c-type">double</span> carne = <span class="c-number">180.0</span>; <span class="c-comment">// 180g smash</span>
-  <span class="c-type">string</span>[] extras = {<span class="c-string">"Cheddar"</span>,<span class="c-string">"Bacon"</span>,
-  <span class="c-string">"Alface"</span>,<span class="c-string">"Tomate"</span>,<span class="c-string">"Picles"</span>,<span class="c-string">"Molho"</span>};
+            <h2 class="section-title">Descrição do Produto</h2>
+            <pre class="code-block"><span class="c-comment">// Ingredientes do Burguer</span><br
+<span class="c-keyword">class</span> Burger : <span class="c-keyword">public</span> Satisfaction {
+  <span class="c-type">double</span> carne = <span class="c-number">180.0</span>; <span class="c-comment">// 180g smash</span><br
+  <span class="c-type">string</span>[] extras = {<span class="c-string">"Cheddar"</span>, <span class="c-string">"Bacon"</span>,
+    <span class="c-string">"Alface"</span>, <span class="c-string">"Tomate"</span>, <span class="c-string">"Picles"</span>, <span class="c-string">"Molho"</span>};
   <span class="c-comment">// Servido com fritas por padrao</span>
 };</pre>
         </div>
 
+        <!-- COMMIT -->
         <div class="commit-section">
-            <h2 class="section-title">Commit</h2>
             <div class="divider"></div>
-            <textarea class="commit-textarea" placeholder="//commit"></textarea>
+            <h2 class="section-title">Commit</h2>
+            <textarea class="commit-textarea" placeholder="// commit"></textarea>
         </div>
 
+        <!-- QUANTIDADE + GIT ADD -->
         <div class="quantidade-section">
             <span class="quantidade-label">Quantidade</span>
             <div class="quantidade-controles">
-                <button class="qty-btn">-</button>
-                <span class="qty-num">1</span>
-                <button class="qty-btn">+</button>
+                <div class="qty-box">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span class="qty-num" id="qty">1</span>
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
                 <button class="git-add-btn">Git add</button>
             </div>
         </div>
 
     </div>
+
+    <script>
+        let qty = 1;
+        const qtyEl = document.getElementById('qty');
+        function changeQty(d) {
+            qty = Math.max(1, qty + d);
+            qtyEl.textContent = qty;
+        }
+    </script>
 </body>
 </html>
