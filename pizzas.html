@@ -29,9 +29,9 @@
         </div>
 
         <nav class="header-nav" aria-label="Categorias do cardápio">
-            <a href="produtos.html"          class="nav-tab active">Mais Vendidos</a>
+            <a href="produtos.html"          class="nav-tab">Mais Vendidos</a>
             <a href="hamburgueres.html"      class="nav-tab">Hambúrgueres</a>
-            <a href="pizzas.html"            class="nav-tab">Pizzas</a>
+            <a href="pizzas.html"            class="nav-tab active">Pizzas</a>
             <a href="bebidas.html"           class="nav-tab">Bebidas</a>
             <a href="acompanhamentos.html"   class="nav-tab">Acompanhamentos</a>
         </nav>
@@ -45,31 +45,10 @@
         </script>
     </header>
     <main>
-        
         <section class="produtos">
             <div class="menu-container">
-                <h2>Mais Vendidos</h2>
+                <h2>Pizzas</h2>
                 <!-- PRODUTO 1 -->
-                <div class="item-card">
-                    <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
-                    
-                    <div class="item-detalhes">
-                        <div class="item-descricao">
-                            <h3>C++ Burguer</h3>
-                            <code class="code-descricao">
-                                <span class="roxo">class</span> Burger : <span class="roxo">public</span> Satisfaction { <br>
-                                    &nbsp;&nbsp;<span class="roxo">public</span>: <span class="ciano">double</span> carne = <span class="ciano">180.0</span>, queijo = <span class="ciano">2.0</span>; <br>
-                                };
-                            </code>
-                        </div>
-                        
-                        <div class="footer-info">
-                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 28.99;</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- PRODUTO 2 -->
                 <div class="item-card">
                     <img src="img/produtos/PHPizza.png" alt="PHPizza" class="item-image">
                     
@@ -88,46 +67,60 @@
                         </div>
                     </div>
                 </div>
-                <!-- PRODUTO 3 -->
+                <!-- PRODUTO 2 -->
                 <div class="item-card">
-                    <img src="img/produtos/soft-cpp.png" alt="Soft.Cpp" class="item-image">
-                    
+                    <img src="img/produtos/queijo-fullstack.png" alt="Queijo Fullstack" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
-                            <h3>Soft.Cpp</h3>
+                            <h3>Queijo Fullstack</h3>
                             <code class="code-descricao">
-                                <span class="azul">string</span> sabores[] = {<span class="ciano">"Coca"</span>, <span class="ciano">"Guaraná"</span>, <br> <span class="ciano">"Fanta"</span>}; <br>
-                                <span class="roxo">for</span> (<span class="roxo">auto</span> s : sabores) drink.addIce(s);
+                                <span class="roxo">const</span> queijos = [<span class="ciano">'Mussarela'</span>, <span class="ciano">'Parmesão'</span>, <span class="ciano">'Gorgonzola'</span>, <span class="ciano">'Provolone'</span>]; <br>
+                                <span class="roxo">const</span> blend = queijos.join(<span class="ciano">' + '</span>); <br>
+                                <span class="azul">console</span>.log(<span class="ciano">`Pizza pronta: ${blend}`</span>);
                             </code>
                         </div>
-                        
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 05.99;</button>
+                            <button class="botao-preco">R$ 31.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 3 -->
+                <div class="item-card">
+                    <img src="img/produtos/javarita.png" alt="Javarita" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Javarita</h3>
+                            <code class="code-descricao">
+                                <span class="azul">String</span> base = <span class="ciano">"Manjericão e Tomate"</span>; <br>
+                                System.out.println(<span class="ciano">"Compilando Marguerita..."</span>); <br>
+                                <span class="roxo">this</span>.setStatus(<span class="ciano">"Sabor Pronta"</span>);
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 33.99;</button>
                         </div>
                     </div>
                 </div>
                 <!-- PRODUTO 4 -->
                 <div class="item-card">
-                    <img src="img/produtos/js-fries.png" alt="JS Fries" class="item-image">
-                    
+                    <img src="img/produtos/frango-com-catupy.png" alt="Frango com CatuPy" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
-                            <h3>JS Fries</h3>
+                            <h3>Frango com CatuPy</h3>
                             <code class="code-descricao">
-                                <span class="roxo">const</span> fries = <span class="azul">Array</span>(<span class="laranja">50</span>).fill('🍟'); <br>
-                                fries.forEach(f => me.eat(f)); <br>
-                                <span class="azul">console</span>.log(<span class="ciano">"Status: 200 OK (Satisfied)"</span>);
+                                base, extra = <span class="ciano">"Frango Desfiado"</span>, <span class="ciano">"Catupiry"</span> <br>
+                                <span class="cinza"># Otimizando entrega do sabor</span> <br>
+                                <span class="azul">print</span>(<span class="ciano">f"Status: {base} & {extra}"</span>)
                             </code>
                         </div>
-                        
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 12.99;</button>
+                            <button class="botao-preco">R$ 29.99;</button>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
     <script>

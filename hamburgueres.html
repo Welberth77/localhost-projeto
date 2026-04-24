@@ -29,8 +29,8 @@
         </div>
 
         <nav class="header-nav" aria-label="Categorias do cardápio">
-            <a href="produtos.html"          class="nav-tab active">Mais Vendidos</a>
-            <a href="hamburgueres.html"      class="nav-tab">Hambúrgueres</a>
+            <a href="produtos.html"          class="nav-tab">Mais Vendidos</a>
+            <a href="hamburgueres.html"      class="nav-tab active">Hambúrgueres</a>
             <a href="pizzas.html"            class="nav-tab">Pizzas</a>
             <a href="bebidas.html"           class="nav-tab">Bebidas</a>
             <a href="acompanhamentos.html"   class="nav-tab">Acompanhamentos</a>
@@ -45,11 +45,50 @@
         </script>
     </header>
     <main>
-        
         <section class="produtos">
             <div class="menu-container">
-                <h2>Mais Vendidos</h2>
+                <h2>Hambúrgueres</h2>
                 <!-- PRODUTO 1 -->
+                <div class="item-card">
+                    <img src="img/produtos/pyburguer.png" alt="PyBurguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>PyBurguer</h3>
+                            <code class="code-descricao">
+                                ingredientes = [<span class="ciano">"180g carne"</span>, <span class="ciano">"cheddar_melted"</span>, <br> 
+                                <span class="ciano">"pao_brioche"</span>] <br>
+                                print(<span class="ciano">"SatisfactionLevel: CRITICAL_MAX"</span>)
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 22.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 2 -->
+                <div class="item-card">
+                    <img src="img/produtos/fullstack-burguer.png" alt="FullStack Burguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>FullStack Burguer</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">const</span> stack = [<span class="ciano">'Pão</span>, <span class="ciano">'2x Carne'</span>, <span class="ciano">'Ovo'</span>, <span class="ciano">'Bacon'</span>]; <br>
+                                stack.push(<span class="ciano">'Queijo'</span>); <br>
+                                return stack.render();
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 34.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 3 -->
                 <div class="item-card">
                     <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
                     
@@ -69,61 +108,24 @@
                         </div>
                     </div>
                 </div>
-                <!-- PRODUTO 2 -->
-                <div class="item-card">
-                    <img src="img/produtos/PHPizza.png" alt="PHPizza" class="item-image">
-                    
-                    <div class="item-detalhes">
-                        <div class="item-descricao">
-                            <h3>PHPizza</h3>
-                            <code class="code-descricao">
-                                <span class="vermelho">$ingredientes</span> = [<span class="ciano">"Pepperoni"</span>, <span class="ciano">"Mussarela"</span>, <br> <span class="ciano">"Molho"</span>]; <br>
-                                <span class="roxo">foreach</span> (<span class="vermelho">$ingredientes</span> <span class="roxo">as</span> <span class="vermelho">$i</span>) <span class="roxo">echo</span> <span class="vermelho">$i</span>;
-                            </code>
-                        </div>
-                        
-                        <div class="footer-info">
-                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 29.99;</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- PRODUTO 3 -->
-                <div class="item-card">
-                    <img src="img/produtos/soft-cpp.png" alt="Soft.Cpp" class="item-image">
-                    
-                    <div class="item-detalhes">
-                        <div class="item-descricao">
-                            <h3>Soft.Cpp</h3>
-                            <code class="code-descricao">
-                                <span class="azul">string</span> sabores[] = {<span class="ciano">"Coca"</span>, <span class="ciano">"Guaraná"</span>, <br> <span class="ciano">"Fanta"</span>}; <br>
-                                <span class="roxo">for</span> (<span class="roxo">auto</span> s : sabores) drink.addIce(s);
-                            </code>
-                        </div>
-                        
-                        <div class="footer-info">
-                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 05.99;</button>
-                        </div>
-                    </div>
-                </div>
                 <!-- PRODUTO 4 -->
                 <div class="item-card">
-                    <img src="img/produtos/js-fries.png" alt="JS Fries" class="item-image">
+                    <img src="img/produtos/bacon.png" alt="Bacon#" class="item-image">
                     
                     <div class="item-detalhes">
                         <div class="item-descricao">
-                            <h3>JS Fries</h3>
+                            <h3>Bacon#</h3>
                             <code class="code-descricao">
-                                <span class="roxo">const</span> fries = <span class="azul">Array</span>(<span class="laranja">50</span>).fill('🍟'); <br>
-                                fries.forEach(f => me.eat(f)); <br>
-                                <span class="azul">console</span>.log(<span class="ciano">"Status: 200 OK (Satisfied)"</span>);
+                                <span class="roxo">var</span> bacon = <span class="roxo">new</span> Ingredient("<span class="ciano">Crocante</span>"); <br>
+                                <span class="roxo">while</span> (hungry) { <br>
+                                    &nbsp;&nbsp;me.eat(bacon); <br>
+                                }
                             </code>
                         </div>
                         
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 12.99;</button>
+                            <button class="botao-preco">R$ 25.99;</button>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,87 @@
+/* ==========================================
+   Header — Igor
+   ========================================== */
+ 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    margin: 0 auto;
+}
+
+header {
+    width: 402px;
+    background-color: #121212;
+    border-bottom: 0.5px solid #2a2a2a;
+    border-radius: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+ 
+.header-logo-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+ 
+.header-logo-card {
+    background-color: #1e1e1e;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 402px;
+    height: 70px;
+}
+ 
+.header-logo-card img {
+    width: 71px;
+    height: 60px;
+    object-fit: contain;
+}
+ 
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px 6px 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+ 
+.header-nav::-webkit-scrollbar {
+    display: none;
+}
+ 
+.nav-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #888888;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 150ms ease-out;
+}
+ 
+.nav-tab:hover {
+    color: #03dac6;
+}
+ 
+.nav-tab.active {
+    background-color: #03dac6;
+    color: #0a2e20;
+    font-weight: 700;
+}
