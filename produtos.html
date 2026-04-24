@@ -50,7 +50,7 @@
             <div class="menu-container">
                 <h2>Mais Vendidos</h2>
                 <!-- PRODUTO 1 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="cpp-burguer">
                     <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
                     
                     <div class="item-detalhes">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 2 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="phpizza">
                     <img src="img/produtos/PHPizza.png" alt="PHPizza" class="item-image">
                     
                     <div class="item-detalhes">
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 3 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="soft-cpp">
                     <img src="img/produtos/soft-cpp.png" alt="Soft.Cpp" class="item-image">
                     
                     <div class="item-detalhes">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 4 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="js-fries">
                     <img src="img/produtos/js-fries.png" alt="JS Fries" class="item-image">
                     
                     <div class="item-detalhes">
@@ -131,12 +131,11 @@
         </section>
     </main>
     <script>
-        // Seleciona todos os ícones de coração
+        // ── Coração favorito ─────────────────────────────
         const hearts = document.querySelectorAll('.heart-icon');
-
         hearts.forEach(heart => {
-            heart.addEventListener('click', function() {
-                // Verifica se a imagem atual é a do coração vazio
+            heart.addEventListener('click', function(e) {
+                e.stopPropagation(); // não navega ao clicar no coração
                 if (this.src.includes('coracao-vazio.png')) {
                     this.src = 'img/coracao-cheio.png';
                     this.alt = 'coracao cheio';
@@ -144,6 +143,15 @@
                     this.src = 'img/coracao-vazio.png';
                     this.alt = 'coracao vazio';
                 }
+            });
+        });
+
+        // ── Navegar para o detalhe ao clicar no card ─────
+        document.querySelectorAll('.item-card[data-produto]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const id = this.dataset.produto;
+                window.location.href = `detalhe-produto.html?produto=${id}`;
             });
         });
     </script>

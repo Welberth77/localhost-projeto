@@ -14,35 +14,29 @@
 
         <!-- HEADER -->
         <header class="detalhe-header">
-            <a href="produtos.html" class="voltar-btn">Voltar</a>
+            <a href="javascript:history.back()" class="voltar-btn">Voltar</a>
             <img src="img/logo-localhost.png" alt="Logo LocalHost" class="header-logo">
         </header>
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="produto-imagem-wrapper">
-            <img src="img/burguer.png" alt="C++ Burguer" class="produto-imagem">
+            <img id="produto-imagem" src="" alt="" class="produto-imagem">
         </div>
 
         <!-- CHIP DE CATEGORIA -->
-        <span class="categoria-badge">Hamburguer</span>
+        <span id="produto-categoria" class="categoria-badge"></span>
 
         <!-- NOME + PREÇO -->
         <div class="produto-info">
-            <h1 class="produto-nome">C++ Burguer</h1>
-            <span class="produto-preco">R$ 28,99;</span>
+            <h1 id="produto-nome" class="produto-nome"></h1>
+            <span id="produto-preco" class="produto-preco"></span>
         </div>
 
         <!-- DESCRIÇÃO DO PRODUTO -->
         <div class="descricao-section">
             <div class="divider"></div>
             <h2 class="section-title">Descrição do Produto</h2>
-            <pre class="code-block"><span class="c-comment">// Ingredientes do Burguer</span><br
-<span class="c-keyword">class</span> Burger : <span class="c-keyword">public</span> Satisfaction {
-  <span class="c-type">double</span> carne = <span class="c-number">180.0</span>; <span class="c-comment">// 180g smash</span><br
-  <span class="c-type">string</span>[] extras = {<span class="c-string">"Cheddar"</span>, <span class="c-string">"Bacon"</span>,
-    <span class="c-string">"Alface"</span>, <span class="c-string">"Tomate"</span>, <span class="c-string">"Picles"</span>, <span class="c-string">"Molho"</span>};
-  <span class="c-comment">// Servido com fritas por padrao</span>
-};</pre>
+            <pre id="produto-codigo" class="code-block"></pre>
         </div>
 
         <!-- COMMIT -->
@@ -67,13 +61,60 @@
 
     </div>
 
+    <script src="produtos-data.js"></script>
     <script>
+        // ── Quantidade ────────────────────────────────────
         let qty = 1;
         const qtyEl = document.getElementById('qty');
         function changeQty(d) {
             qty = Math.max(1, qty + d);
             qtyEl.textContent = qty;
         }
+
+        // ── Renderiza código com syntax highlight ─────────
+        function renderCodigo(linhas) {
+            const cores = {
+                comment: '#6e6e6e',
+                keyword: '#bb86fc',
+                string:  '#ff8c00',
+                number:  '#03dac6',
+                white:   '#ffffff',
+            };
+
+            return linhas.map(linha => {
+                if (linha.tipo === 'inline') {
+                    return linha.partes.map(p => {
+                        const cor = cores[p.tipo] || cores.white;
+                        return `<span style="color:${cor}">${p.texto}</span>`;
+                    }).join('');
+                }
+                const cor = cores[linha.tipo] || cores.white;
+                return `<span style="color:${cor}">${linha.texto}</span>`;
+            }).join('\n');
+        }
+
+        // ── Popula a tela com os dados do produto ─────────
+        function carregarProduto() {
+            const params   = new URLSearchParams(window.location.search);
+            const id       = params.get('produto') || 'cpp-burguer';
+            const produto  = produtos[id];
+
+            if (!produto) {
+                document.querySelector('.detalhe-page').innerHTML =
+                    '<p style="color:#fff;padding:32px">Produto não encontrado.</p>';
+                return;
+            }
+
+            document.title = `LocalHost — ${produto.nome}`;
+            document.getElementById('produto-imagem').src      = produto.imagem;
+            document.getElementById('produto-imagem').alt      = produto.nome;
+            document.getElementById('produto-categoria').textContent = produto.categoria;
+            document.getElementById('produto-nome').textContent     = produto.nome;
+            document.getElementById('produto-preco').textContent    = produto.preco;
+            document.getElementById('produto-codigo').innerHTML     = renderCodigo(produto.codigo);
+        }
+
+        carregarProduto();
     </script>
 </body>
 </html>
