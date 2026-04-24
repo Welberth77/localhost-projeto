@@ -37,8 +37,106 @@
         </nav>
 
         <script>
-        // -- Coração favorito
-        document.querySelectorAll('.heart-icon').forEach(heart => {
+        // Rola automaticamente até a tab ativa
+        const activeTab = document.querySelector('.nav-tab.active');
+        if (activeTab) {
+            activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+        </script>
+    </header>
+    <main>
+        <section class="produtos">
+            <div class="menu-container">
+                <h2>Hambúrgueres</h2>
+                <!-- PRODUTO 1 -->
+                <div class="item-card" data-produto="pyburguer">
+                    <img src="img/produtos/pyburguer.png" alt="PyBurguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>PyBurguer</h3>
+                            <code class="code-descricao">
+                                ingredientes = [<span class="ciano">"180g carne"</span>, <span class="ciano">"cheddar_melted"</span>, <br> 
+                                <span class="ciano">"pao_brioche"</span>] <br>
+                                print(<span class="ciano">"SatisfactionLevel: CRITICAL_MAX"</span>)
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 22.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 2 -->
+                <div class="item-card" data-produto="fullstack-burguer">
+                    <img src="img/produtos/fullstack-burguer.png" alt="FullStack Burguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>FullStack Burguer</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">const</span> stack = [<span class="ciano">'Pão</span>, <span class="ciano">'2x Carne'</span>, <span class="ciano">'Ovo'</span>, <span class="ciano">'Bacon'</span>]; <br>
+                                stack.push(<span class="ciano">'Queijo'</span>); <br>
+                                return stack.render();
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 34.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 3 -->
+                <div class="item-card" data-produto="cpp-burguer">
+                    <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>C++ Burguer</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">class</span> Burger : <span class="roxo">public</span> Satisfaction { <br>
+                                    &nbsp;&nbsp;<span class="roxo">public</span>: <span class="ciano">double</span> carne = <span class="ciano">180.0</span>, queijo = <span class="ciano">2.0</span>; <br>
+                                };
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 28.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 4 -->
+                <div class="item-card" data-produto="bacon">
+                    <img src="img/produtos/bacon.png" alt="Bacon#" class="item-image">
+                    
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Bacon#</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">var</span> bacon = <span class="roxo">new</span> Ingredient("<span class="ciano">Crocante</span>"); <br>
+                                <span class="roxo">while</span> (hungry) { <br>
+                                    &nbsp;&nbsp;me.eat(bacon); <br>
+                                }
+                            </code>
+                        </div>
+                        
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 25.99;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Seleciona todos os ícones de coração
+        const hearts = document.querySelectorAll('.heart-icon');
+
+        hearts.forEach(heart => {
             heart.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (this.src.includes('coracao-vazio.png')) {
@@ -51,26 +149,13 @@
             });
         });
 
-        // -- Navegar para o detalhe ao clicar no card
+        // Navegar ao clicar no card
         const mapaDetalhes = {
-          "cpp-burguer": "detalhe-cpp-burguer.html",
-          "phpizza": "detalhe-phpizza.html",
-          "soft-cpp": "detalhe-soft-cpp.html",
-          "js-fries": "detalhe-js-fries.html",
-          "pyburguer": "detalhe-pyburguer.html",
-          "fullstack-burguer": "detalhe-fullstack-burguer.html",
-          "bacon": "detalhe-bacon.html",
-          "queijo-fullstack": "detalhe-queijo-fullstack.html",
-          "javarita": "detalhe-javarita.html",
-          "frango-catupy": "detalhe-frango-catupy.html",
-          "suco-git": "detalhe-suco-git.html",
-          "java-coffee": "detalhe-java-coffee.html",
-          "agua": "detalhe-agua.html",
-          "nuggets": "detalhe-nuggets.html",
-          "onion": "detalhe-onion.html",
-          "rust-ica": "detalhe-rust-ica.html"
-};
-
+            "pyburguer":        "detalhe-pyburguer.html",
+            "fullstack-burguer":"detalhe-fullstack-burguer.html",
+            "cpp-burguer":      "detalhe-cpp-burguer.html",
+            "bacon":            "detalhe-bacon.html"
+        };
         document.querySelectorAll('.item-card[data-produto]').forEach(card => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function() {

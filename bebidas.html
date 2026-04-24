@@ -37,8 +37,97 @@
         </nav>
         
         <script>
-        // -- Coração favorito
-        document.querySelectorAll('.heart-icon').forEach(heart => {
+        // Rola automaticamente até a tab ativa
+        const activeTab = document.querySelector('.nav-tab.active');
+        if (activeTab) {
+            activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+        </script>
+    </header>
+    <main>
+        <section class="produtos">
+            <div class="menu-container">
+                <h2>Bebidas</h2>
+                <!-- PRODUTO 1 -->
+                <div class="item-card" data-produto="soft-cpp">
+                    <img src="img/produtos/soft-cpp.png" alt="Soft.cpp" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Soft.cpp</h3>
+                            <code class="code-descricao">
+                                <span class="azul">string</span> sabores[] = {<span class="ciano">"Coca"</span>, <span class="ciano">"Guaraná"</span>, <br> <span class="ciano">"Fanta"</span>}; <br>
+                                <span class="roxo">for</span> (<span class="roxo">auto</span> s : sabores) drink.addIce(s);
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 05.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 2 -->
+                <div class="item-card" data-produto="suco-git">
+                    <img src="img/produtos/suco-git.png" alt="Suco-Git" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Suco-Git</h3>
+                            <code class="code-descricao">
+                                <span class="laranja">git</span> checkout -b <span class="ciano">"Suco_Laranja"</span> <br>
+                                <span class="laranja">git</span> add gelo acucar <br>
+                                <span class="laranja">git</span> commit -m <span class="ciano">"Suco extraido com sucesso"</span>
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 04.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 3 -->
+                <div class="item-card" data-produto="java-coffee">
+                    <img src="img/produtos/java-coffee.png" alt="Java Coffee" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>Java Coffee</h3>
+                            <code class="code-descricao">
+                                <span class="roxo">while</span> (!brain.isWorking()) { <br>
+                                &nbsp;&nbsp;me.drink(<span class="roxo">new</span> Coffee()); <br>
+                                } <br>
+                                <span class="cinza">// Heap space: Full energy</span>
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 02.99;</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUTO 4 -->
+                <div class="item-card" data-produto="agua">
+                    <img src="img/produtos/agua.png" alt="index.html" class="item-image">
+                    <div class="item-detalhes">
+                        <div class="item-descricao">
+                            <h3>index.html</h3>
+                            <code class="code-descricao">
+                                &lt;<span class="vermelho">div</span> <span class="laranja">class</span>=<span class="ciano">"copo"</span>&gt; <br>
+                                &nbsp;&nbsp;&lt;<span class="vermelho">span</span> <span class="laranja">id</span>=<span class="ciano">"h2o"</span>&gt;Mineral Natural&lt;/<span class="vermelho">span</span>&gt; <br>
+                                &lt;/<span class="vermelho">div</span>&gt;
+                            </code>
+                        </div>
+                        <div class="footer-info">
+                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
+                            <button class="botao-preco">R$ 01.99;</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </main>
+    <script>
+        // Seleciona todos os ícones de coração
+        const hearts = document.querySelectorAll('.heart-icon');
+
+        hearts.forEach(heart => {
             heart.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (this.src.includes('coracao-vazio.png')) {
@@ -51,26 +140,13 @@
             });
         });
 
-        // -- Navegar para o detalhe ao clicar no card
+        // Navegar ao clicar no card
         const mapaDetalhes = {
-          "cpp-burguer": "detalhe-cpp-burguer.html",
-          "phpizza": "detalhe-phpizza.html",
-          "soft-cpp": "detalhe-soft-cpp.html",
-          "js-fries": "detalhe-js-fries.html",
-          "pyburguer": "detalhe-pyburguer.html",
-          "fullstack-burguer": "detalhe-fullstack-burguer.html",
-          "bacon": "detalhe-bacon.html",
-          "queijo-fullstack": "detalhe-queijo-fullstack.html",
-          "javarita": "detalhe-javarita.html",
-          "frango-catupy": "detalhe-frango-catupy.html",
-          "suco-git": "detalhe-suco-git.html",
-          "java-coffee": "detalhe-java-coffee.html",
-          "agua": "detalhe-agua.html",
-          "nuggets": "detalhe-nuggets.html",
-          "onion": "detalhe-onion.html",
-          "rust-ica": "detalhe-rust-ica.html"
-};
-
+            "soft-cpp":    "detalhe-soft-cpp.html",
+            "suco-git":    "detalhe-suco-git.html",
+            "java-coffee": "detalhe-java-coffee.html",
+            "agua":        "detalhe-agua.html"
+        };
         document.querySelectorAll('.item-card[data-produto]').forEach(card => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function() {
