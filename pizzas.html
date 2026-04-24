@@ -37,99 +37,10 @@
         </nav>
 
         <script>
-        // Rola automaticamente até a tab ativa
-        const activeTab = document.querySelector('.nav-tab.active');
-        if (activeTab) {
-            activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-        </script>
-    </header>
-    <main>
-        <section class="produtos">
-            <div class="menu-container">
-                <h2>Pizzas</h2>
-                <!-- PRODUTO 1 -->
-                <div class="item-card" data-produto="phpizza">
-                    <img src="img/produtos/PHPizza.png" alt="PHPizza" class="item-image">
-                    
-                    <div class="item-detalhes">
-                        <div class="item-descricao">
-                            <h3>PHPizza</h3>
-                            <code class="code-descricao">
-                                <span class="vermelho">$ingredientes</span> = [<span class="ciano">"Pepperoni"</span>, <span class="ciano">"Mussarela"</span>, <br> <span class="ciano">"Molho"</span>]; <br>
-                                <span class="roxo">foreach</span> (<span class="vermelho">$ingredientes</span> <span class="roxo">as</span> <span class="vermelho">$i</span>) <span class="roxo">echo</span> <span class="vermelho">$i</span>;
-                            </code>
-                        </div>
-                        
-                        <div class="footer-info">
-                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 29.99;</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- PRODUTO 2 -->
-                <div class="item-card" data-produto="queijo-fullstack">
-                    <img src="img/produtos/queijo-fullstack.png" alt="Queijo Fullstack" class="item-image">
-                    <div class="item-detalhes">
-                        <div class="item-descricao">
-                            <h3>Queijo Fullstack</h3>
-                            <code class="code-descricao">
-                                <span class="roxo">const</span> queijos = [<span class="ciano">'Mussarela'</span>, <span class="ciano">'Parmesão'</span>, <span class="ciano">'Gorgonzola'</span>, <span class="ciano">'Provolone'</span>]; <br>
-                                <span class="roxo">const</span> blend = queijos.join(<span class="ciano">' + '</span>); <br>
-                                <span class="azul">console</span>.log(<span class="ciano">`Pizza pronta: ${blend}`</span>);
-                            </code>
-                        </div>
-                        <div class="footer-info">
-                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 31.99;</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- PRODUTO 3 -->
-                <div class="item-card" data-produto="javarita">
-                    <img src="img/produtos/javarita.png" alt="Javarita" class="item-image">
-                    <div class="item-detalhes">
-                        <div class="item-descricao">
-                            <h3>Javarita</h3>
-                            <code class="code-descricao">
-                                <span class="azul">String</span> base = <span class="ciano">"Manjericão e Tomate"</span>; <br>
-                                System.out.println(<span class="ciano">"Compilando Marguerita..."</span>); <br>
-                                <span class="roxo">this</span>.setStatus(<span class="ciano">"Sabor Pronta"</span>);
-                            </code>
-                        </div>
-                        <div class="footer-info">
-                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 33.99;</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- PRODUTO 4 -->
-                <div class="item-card" data-produto="frango-catupy">
-                    <img src="img/produtos/frango-com-catupy.png" alt="Frango com CatuPy" class="item-image">
-                    <div class="item-detalhes">
-                        <div class="item-descricao">
-                            <h3>Frango com CatuPy</h3>
-                            <code class="code-descricao">
-                                base, extra = <span class="ciano">"Frango Desfiado"</span>, <span class="ciano">"Catupiry"</span> <br>
-                                <span class="cinza"># Otimizando entrega do sabor</span> <br>
-                                <span class="azul">print</span>(<span class="ciano">f"Status: {base} & {extra}"</span>)
-                            </code>
-                        </div>
-                        <div class="footer-info">
-                            <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 29.99;</button>
-                        </div>
-                    </div>
-                </div>
-        </section>
-    </main>
-    <script>
-        // Seleciona todos os ícones de coração
-        const hearts = document.querySelectorAll('.heart-icon');
-
-        hearts.forEach(heart => {
-            heart.addEventListener('click', function() {
-                // Verifica se a imagem atual é a do coração vazio
+        // -- Coração favorito
+        document.querySelectorAll('.heart-icon').forEach(heart => {
+            heart.addEventListener('click', function(e) {
+                e.stopPropagation();
                 if (this.src.includes('coracao-vazio.png')) {
                     this.src = 'img/coracao-cheio.png';
                     this.alt = 'coracao cheio';
@@ -137,6 +48,34 @@
                     this.src = 'img/coracao-vazio.png';
                     this.alt = 'coracao vazio';
                 }
+            });
+        });
+
+        // -- Navegar para o detalhe ao clicar no card
+        const mapaDetalhes = {
+          "cpp-burguer": "detalhe-cpp-burguer.html",
+          "phpizza": "detalhe-phpizza.html",
+          "soft-cpp": "detalhe-soft-cpp.html",
+          "js-fries": "detalhe-js-fries.html",
+          "pyburguer": "detalhe-pyburguer.html",
+          "fullstack-burguer": "detalhe-fullstack-burguer.html",
+          "bacon": "detalhe-bacon.html",
+          "queijo-fullstack": "detalhe-queijo-fullstack.html",
+          "javarita": "detalhe-javarita.html",
+          "frango-catupy": "detalhe-frango-catupy.html",
+          "suco-git": "detalhe-suco-git.html",
+          "java-coffee": "detalhe-java-coffee.html",
+          "agua": "detalhe-agua.html",
+          "nuggets": "detalhe-nuggets.html",
+          "onion": "detalhe-onion.html",
+          "rust-ica": "detalhe-rust-ica.html"
+};
+
+        document.querySelectorAll('.item-card[data-produto]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const destino = mapaDetalhes[this.dataset.produto];
+                if (destino) window.location.href = destino;
             });
         });
     </script>
