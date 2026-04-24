@@ -1,17 +1,42 @@
+/* ── Reset ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Tokens ──────────────────────────────────────────── */
+:root {
+    --bg:      #121212;
+    --card:    #1e1e1e;
+    --card2:   #2a2a2a;
+    --teal:    #03dac6;
+    --orange:  #ff8c00;
+    --purple:  #bb86fc;
+    --white:   #ffffff;
+    --gray:    #999999;
+    --mgray:   #6e6e6e;
+    --dgray:   #3a3a3a;
+
+    --f-ui:   'Dosis', sans-serif;
+    --f-name: 'Roboto', sans-serif;
+    --f-code: 'Fira Code', monospace;
+}
+
+/* ── Body ────────────────────────────────────────────── */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Fira Code', monospace;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background: #0a0a0a;
 }
 
+/* ══════════════════════════════════════════════════════
+   TELA INICIAL (index.html)
+══════════════════════════════════════════════════════ */
 .start-page {
     width: 402px;
     height: 100vh;
-    background-color: #121212;
+    background-color: var(--bg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,15 +46,259 @@ body {
 .botao-cardapio {
     width: 157px;
     height: 23px;
-    font-size:12px;
-    font-weight:bold;
-    text-transform:uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: var(--f-code);
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 100px;
-    text-decoration:none;
+    text-decoration: none;
     color: #000000;
     margin-top: 35px;
 }
+
+/* ══════════════════════════════════════════════════════
+   DETALHE DO PRODUTO (detalhe-produto.html)
+══════════════════════════════════════════════════════ */
+.detalhe-page {
+    width: 402px;
+    min-height: 100vh;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    padding: 0 14px 32px;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+.detalhe-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.voltar-btn {
+    position: absolute;
+    left: 0;
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+}
+
+.header-logo {
+    height: 58px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ── Imagem do produto ───────────────────────────────── */
+.produto-imagem-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--card);
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* ── Chip de categoria ───────────────────────────────── */
+.categoria-badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    background: rgba(3, 218, 198, 0.15);
+    border-radius: 100px;
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 10px;
+    color: var(--teal);
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+}
+
+/* ── Nome + Preço ────────────────────────────────────── */
+.produto-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.produto-nome {
+    font-family: var(--f-name);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--white);
+    line-height: 1;
+}
+
+.produto-preco {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 14px;
+    background: var(--card);
+    border-radius: 100px;
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--orange);
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+/* ── Divider ─────────────────────────────────────────── */
+.divider {
+    height: 1px;
+    background: var(--dgray);
+    margin-bottom: 14px;
+}
+
+/* ── Section title ───────────────────────────────────── */
+.section-title {
+    font-family: var(--f-name);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* ── Code block ──────────────────────────────────────── */
+.descricao-section {
+    margin-bottom: 20px;
+}
+
+.code-block {
+    font-family: var(--f-code);
+    font-weight: 700;
+    font-size: 8.5px;
+    line-height: 1.9;
+    letter-spacing: 0.35px;
+    color: var(--white);
+    white-space: pre-wrap;
+    word-break: break-word;
+    align-self: center;
+    display: table;
+    margin: 0 auto;
+}
+
+.c-comment { color: var(--mgray); }
+.c-keyword  { color: var(--purple); }
+.c-type     { color: var(--purple); }
+.c-number   { color: var(--teal); }
+.c-string   { color: var(--orange); }
+
+/* ── Commit ──────────────────────────────────────────── */
+.commit-section {
+    margin-bottom: 20px;
+}
+
+.commit-textarea {
+    width: 100%;
+    height: 90px;
+    background: var(--card);
+    border: none;
+    border-radius: 12px;
+    color: var(--mgray);
+    font-family: var(--f-code);
+    font-weight: 700;
+    font-size: 9px;
+    padding: 12px 14px;
+    resize: none;
+    outline: none;
+    letter-spacing: 0.3px;
+}
+
+.commit-textarea::placeholder {
+    color: var(--mgray);
+}
+
+/* ── Quantidade + Git add ────────────────────────────── */
+.quantidade-label {
+    display: block;
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.quantidade-controles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-box {
+    flex: 1;
+    height: 44px;
+    background: var(--card2);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.15s;
+}
+
+.qty-btn:hover { background: rgba(255, 255, 255, 0.06); }
+
+.qty-num {
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--white);
+}
+
+.git-add-btn {
+    flex: 1;
+    height: 44px;
+    background: var(--teal);
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0.4px;
+    transition: filter 0.15s;
+}
+
+.git-add-btn:hover { filter: brightness(1.08); }

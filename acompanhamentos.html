@@ -49,7 +49,7 @@
             <div class="menu-container">
                 <h2>Acompanhamentos</h2>
                 <!-- PRODUTO 1 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="js-fries">
                     <img src="img/produtos/js-fries.png" alt="JS Fries" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 2 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="nuggets">
                     <img src="img/produtos/nuggets.png" alt="Nuggets++" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 3 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="onion">
                     <img src="img/produtos/onion.png" alt="Onion.py" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 4 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="rust-ica">
                     <img src="img/produtos/rust-ica.png" alt="Rust-ica" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
@@ -129,8 +129,8 @@
         const hearts = document.querySelectorAll('.heart-icon');
 
         hearts.forEach(heart => {
-            heart.addEventListener('click', function() {
-                // Verifica se a imagem atual é a do coração vazio
+            heart.addEventListener('click', function(e) {
+                e.stopPropagation();
                 if (this.src.includes('coracao-vazio.png')) {
                     this.src = 'img/coracao-cheio.png';
                     this.alt = 'coracao cheio';
@@ -138,6 +138,21 @@
                     this.src = 'img/coracao-vazio.png';
                     this.alt = 'coracao vazio';
                 }
+            });
+        });
+
+        // Navegar ao clicar no card
+        const mapaDetalhes = {
+            "js-fries": "detalhe-js-fries.html",
+            "nuggets":  "detalhe-nuggets.html",
+            "onion":    "detalhe-onion.html",
+            "rust-ica": "detalhe-rust-ica.html"
+        };
+        document.querySelectorAll('.item-card[data-produto]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const destino = mapaDetalhes[this.dataset.produto];
+                if (destino) window.location.href = destino;
             });
         });
     </script>

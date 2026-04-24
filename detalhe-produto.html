@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalHost - Detalhe do Produto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Fira+Code:wght@300;400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="detalhe-page">
+
+        <!-- HEADER -->
+        <header class="detalhe-header">
+            <a href="javascript:history.back()" class="voltar-btn">Voltar</a>
+            <img src="img/logo-localhost.png" alt="Logo LocalHost" class="header-logo">
+        </header>
+
+        <!-- IMAGEM DO PRODUTO -->
+        <div class="produto-imagem-wrapper">
+            <img id="produto-imagem" src="" alt="" class="produto-imagem">
+        </div>
+
+        <!-- CHIP DE CATEGORIA -->
+        <span id="produto-categoria" class="categoria-badge"></span>
+
+        <!-- NOME + PREÇO -->
+        <div class="produto-info">
+            <h1 id="produto-nome" class="produto-nome"></h1>
+            <span id="produto-preco" class="produto-preco"></span>
+        </div>
+
+        <!-- DESCRIÇÃO DO PRODUTO -->
+        <div class="descricao-section">
+            <div class="divider"></div>
+            <h2 class="section-title">Descrição do Produto</h2>
+            <pre id="produto-codigo" class="code-block"></pre>
+        </div>
+
+        <!-- COMMIT -->
+        <div class="commit-section">
+            <div class="divider"></div>
+            <h2 class="section-title">Commit</h2>
+            <textarea class="commit-textarea" placeholder="// commit"></textarea>
+        </div>
+
+        <!-- QUANTIDADE + GIT ADD -->
+        <div class="quantidade-section">
+            <span class="quantidade-label">Quantidade</span>
+            <div class="quantidade-controles">
+                <div class="qty-box">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span class="qty-num" id="qty">1</span>
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
+                <button class="git-add-btn">Git add</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="produtos-data.js"></script>
+    <script>
+        // ── Quantidade ────────────────────────────────────
+        let qty = 1;
+        const qtyEl = document.getElementById('qty');
+        function changeQty(d) {
+            qty = Math.max(1, qty + d);
+            qtyEl.textContent = qty;
+        }
+
+        // ── Renderiza código com syntax highlight ─────────
+        function renderCodigo(linhas) {
+            const cores = {
+                comment: '#6e6e6e',
+                keyword: '#bb86fc',
+                string:  '#ff8c00',
+                number:  '#03dac6',
+                white:   '#ffffff',
+            };
+
+            return linhas.map(linha => {
+                if (linha.tipo === 'inline') {
+                    return linha.partes.map(p => {
+                        const cor = cores[p.tipo] || cores.white;
+                        return `<span style="color:${cor}">${p.texto}</span>`;
+                    }).join('');
+                }
+                const cor = cores[linha.tipo] || cores.white;
+                return `<span style="color:${cor}">${linha.texto}</span>`;
+            }).join('\n');
+        }
+
+        // ── Popula a tela com os dados do produto ─────────
+        function carregarProduto() {
+            const params   = new URLSearchParams(window.location.search);
+            const id       = params.get('produto') || 'cpp-burguer';
+            const produto  = produtos[id];
+
+            if (!produto) {
+                document.querySelector('.detalhe-page').innerHTML =
+                    '<p style="color:#fff;padding:32px">Produto não encontrado.</p>';
+                return;
+            }
+
+            document.title = `LocalHost — ${produto.nome}`;
+            document.getElementById('produto-imagem').src      = produto.imagem;
+            document.getElementById('produto-imagem').alt      = produto.nome;
+            document.getElementById('produto-categoria').textContent = produto.categoria;
+            document.getElementById('produto-nome').textContent     = produto.nome;
+            document.getElementById('produto-preco').textContent    = produto.preco;
+            document.getElementById('produto-codigo').innerHTML     = renderCodigo(produto.codigo);
+        }
+
+        carregarProduto();
+    </script>
+</body>
+</html>
