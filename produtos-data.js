@@ -1,41 +1,41 @@
 const produtos = {
-  // ── MAIS VENDIDOS / HAMBÚRGUERES ─────────────────────
+
+  // ════════════════════════════════════════
+  // HAMBÚRGUERES
+  // ════════════════════════════════════════
+
   "cpp-burguer": {
     nome:      "C++ Burguer",
     categoria: "Hamburguer",
     preco:     "R$ 28,99;",
     imagem:    "img/produtos/c++burguer.png",
     codigo: [
-      { tipo: "comment", texto: "// Ingredientes do Burguer" },
-      { tipo: "white",   texto: "class Burger : " },
+      { tipo: "comment", texto: "// AVISO: pode causar overflow de satisfação" },
+      { tipo: "keyword", texto: "class" },
+      { tipo: "white",   texto: " Burger : " },
       { tipo: "inline",  partes: [
         { tipo: "keyword", texto: "public" },
         { tipo: "white",   texto: " Satisfaction {" }
       ]},
-      { tipo: "white",   texto: "  double carne = " },
       { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  double" },
+        { tipo: "white",   texto: " carne    = " },
         { tipo: "number",  texto: "180.0" },
-        { tipo: "comment", texto: "; // 180g smash" }
-      ]},
-      { tipo: "white",   texto: '  string[] extras = {' },
-      { tipo: "inline",  partes: [
-        { tipo: "string",  texto: '"Cheddar"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"Bacon"' },
-        { tipo: "white",   texto: "," }
+        { tipo: "comment", texto: "; // smash blend" }
       ]},
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: "    " },
-        { tipo: "string",  texto: '"Alface"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"Tomate"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"Picles"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"Molho"' },
-        { tipo: "white",   texto: "};" }
+        { tipo: "keyword", texto: "  string" },
+        { tipo: "white",   texto: " molho    = " },
+        { tipo: "string",  texto: '"segredo_da_casa"' },
+        { tipo: "white",   texto: ";" }
       ]},
-      { tipo: "comment", texto: "  // Servido com fritas por padrao" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  bool" },
+        { tipo: "white",   texto: "   artesanal = " },
+        { tipo: "number",  texto: "true" },
+        { tipo: "white",   texto: ";" }
+      ]},
+      { tipo: "comment", texto: "  // WARNING: altamente viciante" },
       { tipo: "white",   texto: "};" }
     ]
   },
@@ -46,19 +46,22 @@ const produtos = {
     preco:     "R$ 22,99;",
     imagem:    "img/produtos/pyburguer.png",
     codigo: [
-      { tipo: "comment", texto: "// Ingredientes do PyBurguer" },
+      { tipo: "comment", texto: "# hamburguer.py — versão artesanal" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: "ingredients = [" },
-        { tipo: "string",  texto: '"180g carne"' },
-        { tipo: "white",   texto: "," }
+        { tipo: "keyword", texto: "def" },
+        { tipo: "white",   texto: " montar_burguer():" }
       ]},
+      { tipo: "white",   texto: "  ingredientes = [" },
+      { tipo: "string",  texto: '    "brioche_tostado"' },
+      { tipo: "string",  texto: '    "carne_180g_smash"' },
+      { tipo: "string",  texto: '    "cheddar_derretido"' },
+      { tipo: "string",  texto: '    "molho_secreto"' },
+      { tipo: "white",   texto: "  ]" },
       { tipo: "inline",  partes: [
-        { tipo: "string",  texto: '"cheddar_melted"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"pao_brioche"' },
-        { tipo: "white",   texto: "]" }
+        { tipo: "keyword", texto: "  return" },
+        { tipo: "white",   texto: " sum(ingredientes)" }
       ]},
-      { tipo: "comment", texto: '# SatisfactionLevel: CRITICAL_MAX' }
+      { tipo: "comment", texto: "# retorno garantido: satisfação 🐍" }
     ]
   },
 
@@ -68,24 +71,38 @@ const produtos = {
     preco:     "R$ 34,99;",
     imagem:    "img/produtos/fullstack-burguer.png",
     codigo: [
-      { tipo: "comment", texto: "// Ingredientes do Fullstack" },
-      { tipo: "keyword", texto: "const" },
+      { tipo: "comment", texto: "// frontend + backend + banco de dados" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " stack = [" },
-        { tipo: "string",  texto: "'Pão'" },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: "'2x Carne'" },
+        { tipo: "keyword", texto: "const" },
+        { tipo: "white",   texto: " stack = {" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  top:    " },
+        { tipo: "string",  texto: '"Pão brioche"' },
         { tipo: "white",   texto: "," }
       ]},
       { tipo: "inline",  partes: [
-        { tipo: "string",  texto: "'Ovo'" },
+        { tipo: "white",   texto: "  layers: [" },
+        { tipo: "string",  texto: '"2x Carne"' },
         { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: "'Bacon'" },
+        { tipo: "string",  texto: '"Ovo"' },
         { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: "'Queijo'" },
-        { tipo: "white",   texto: "];" }
+        { tipo: "string",  texto: '"Bacon"' },
+        { tipo: "white",   texto: "]," }
       ]},
-      { tipo: "white",   texto: "return stack.render();" }
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  db:     " },
+        { tipo: "string",  texto: '"Queijo fundido"' },
+        { tipo: "white",   texto: "," }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  status: " },
+        { tipo: "number",  texto: "200" },
+        { tipo: "comment", texto: " // OK: Delicioso" }
+      ]},
+      { tipo: "white",   texto: "};" },
+      { tipo: "white",   texto: "stack.deploy(); " },
+      { tipo: "comment", texto: "// vai à mesa em 10min" }
     ]
   },
 
@@ -95,50 +112,64 @@ const produtos = {
     preco:     "R$ 25,99;",
     imagem:    "img/produtos/bacon.png",
     codigo: [
-      { tipo: "comment", texto: "// Ingredientes do Bacon#" },
-      { tipo: "keyword", texto: "var" },
+      { tipo: "comment", texto: "// Bacon.cs — nível de crocância: MAX" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " bacon = " },
-        { tipo: "keyword", texto: "new" },
-        { tipo: "white",   texto: " Ingredient(" },
-        { tipo: "string",  texto: '"Crocante"' },
-        { tipo: "white",   texto: ");" }
+        { tipo: "keyword", texto: "public class" },
+        { tipo: "white",   texto: " Bacon : Ingredient {" }
       ]},
-      { tipo: "keyword", texto: "while" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " (hungry) { Me.Eat(bacon); }" }
-      ]}
+        { tipo: "keyword", texto: "  public string" },
+        { tipo: "white",   texto: " Texture   = " },
+        { tipo: "string",  texto: '"Crocante"' },
+        { tipo: "white",   texto: ";" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  public int" },
+        { tipo: "white",   texto: "    Fatias    = " },
+        { tipo: "number",  texto: "3" },
+        { tipo: "white",   texto: ";" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  public bool" },
+        { tipo: "white",   texto: "   Viciante  => " },
+        { tipo: "number",  texto: "true" },
+        { tipo: "white",   texto: ";" }
+      ]},
+      { tipo: "comment", texto: "  // loop infinito de prazer" },
+      { tipo: "white",   texto: "}" }
     ]
   },
 
-  // ── PIZZAS ───────────────────────────────────────────
+  // ════════════════════════════════════════
+  // PIZZAS
+  // ════════════════════════════════════════
+
   "phpizza": {
     nome:      "PHPizza",
     categoria: "Pizza",
     preco:     "R$ 29,99;",
     imagem:    "img/produtos/PHPizza.png",
     codigo: [
-      { tipo: "comment", texto: "// Ingredientes da PHPizza" },
+      { tipo: "comment", texto: "<?php // assada no forno a lenha 🍕" },
       { tipo: "inline",  partes: [
         { tipo: "keyword", texto: "$ingredientes" },
-        { tipo: "white",   texto: " = [" },
-        { tipo: "string",  texto: '"Pepperoni"' },
-        { tipo: "white",   texto: "," }
+        { tipo: "white",   texto: " = [" }
       ]},
+      { tipo: "string",  texto: '  "Pepperoni_artesanal"' },
+      { tipo: "string",  texto: '  "Mussarela_derretida"' },
+      { tipo: "string",  texto: '  "Molho_caseiro"' },
+      { tipo: "white",   texto: "];" },
       { tipo: "inline",  partes: [
-        { tipo: "string",  texto: '"Mussarela"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"Molho"' },
-        { tipo: "white",   texto: "];" }
-      ]},
-      { tipo: "keyword", texto: "foreach" },
-      { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " ($ingredientes " },
-        { tipo: "keyword", texto: "as" },
-        { tipo: "white",   texto: " $i) " },
+        { tipo: "keyword", texto: "foreach" },
+        { tipo: "white",   texto: " (" },
+        { tipo: "keyword", texto: "$ingredientes" },
+        { tipo: "keyword", texto: " as" },
+        { tipo: "keyword", texto: " $i" },
+        { tipo: "white",   texto: ") " },
         { tipo: "keyword", texto: "echo" },
         { tipo: "white",   texto: " $i;" }
-      ]}
+      ]},
+      { tipo: "comment", texto: "// SatisfactionLevel: 10/10 🍕" }
     ]
   },
 
@@ -148,20 +179,32 @@ const produtos = {
     preco:     "R$ 31,99;",
     imagem:    "img/produtos/queijo-fullstack.png",
     codigo: [
-      { tipo: "comment", texto: "// Blend de queijos" },
-      { tipo: "keyword", texto: "const" },
+      { tipo: "comment", texto: "// 4 queijos para dominar a stack" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " queijos = [" },
-        { tipo: "string",  texto: "'Mussarela'" },
+        { tipo: "keyword", texto: "const" },
+        { tipo: "white",   texto: " queijos = {" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  frontend:  " },
+        { tipo: "string",  texto: '"Mussarela"' },
         { tipo: "white",   texto: "," }
       ]},
       { tipo: "inline",  partes: [
-        { tipo: "string",  texto: "'Parmesão'" },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: "'Gorgonzola'" },
-        { tipo: "white",   texto: "];" }
+        { tipo: "white",   texto: "  backend:   " },
+        { tipo: "string",  texto: '"Parmesão"' },
+        { tipo: "white",   texto: "," }
       ]},
-      { tipo: "white",   texto: "queijos.join(' + ');" }
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  database:  " },
+        { tipo: "string",  texto: '"Gorgonzola"' },
+        { tipo: "white",   texto: "," }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  devOps:    " },
+        { tipo: "string",  texto: '"Provolone"' }
+      ]},
+      { tipo: "white",   texto: "};" },
+      { tipo: "comment", texto: "// blend irresistível 🧀" }
     ]
   },
 
@@ -171,16 +214,33 @@ const produtos = {
     preco:     "R$ 33,99;",
     imagem:    "img/produtos/javarita.png",
     codigo: [
-      { tipo: "comment", texto: "// Pizza Marguerita em Java" },
-      { tipo: "keyword", texto: "String" },
+      { tipo: "comment", texto: "// Marguerita.java — clássico que compila" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: ' base = ' },
-        { tipo: "string",  texto: '"Manjericão e Tomate"' },
+        { tipo: "keyword", texto: "String" },
+        { tipo: "white",   texto: " molho   = " },
+        { tipo: "string",  texto: '"Tomate San Marzano"' },
         { tipo: "white",   texto: ";" }
       ]},
-      { tipo: "white",   texto: 'System.out.println(' },
-      { tipo: "string",  texto: '"Compilando..."' },
-      { tipo: "white",   texto: ');' }
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "String" },
+        { tipo: "white",   texto: " queijo  = " },
+        { tipo: "string",  texto: '"Mussarela de Búfala"' },
+        { tipo: "white",   texto: ";" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "String" },
+        { tipo: "white",   texto: " aroma   = " },
+        { tipo: "string",  texto: '"Manjericão fresco"' },
+        { tipo: "white",   texto: ";" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "forno.assar(" },
+        { tipo: "number",  texto: "400" },
+        { tipo: "white",   texto: ", " },
+        { tipo: "string",  texto: '"celsius"' },
+        { tipo: "white",   texto: ");" }
+      ]},
+      { tipo: "comment", texto: "// Build: SUCCESS 🍕" }
     ]
   },
 
@@ -190,35 +250,59 @@ const produtos = {
     preco:     "R$ 28,99;",
     imagem:    "img/produtos/frango-com-catupy.png",
     codigo: [
-      { tipo: "comment", texto: "# Sabor extraído com Python" },
+      { tipo: "comment", texto: "# frango_catupiry.py — comfort food" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: "base, extra = " },
-        { tipo: "string",  texto: '"Frango Desfiado"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"Catupiry"' }
+        { tipo: "keyword", texto: "def" },
+        { tipo: "white",   texto: " montar_pizza():" }
       ]},
-      { tipo: "white",   texto: 'print(f"Status: {base} & {extra}")' }
+      { tipo: "white",   texto: "  recheio = {" },
+      { tipo: "inline",  partes: [
+        { tipo: "string",  texto: '    "frango"' },
+        { tipo: "white",   texto: ": " },
+        { tipo: "string",  texto: '"desfiado_temperado"' },
+        { tipo: "white",   texto: "," }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "string",  texto: '    "catupiry"' },
+        { tipo: "white",   texto: ": " },
+        { tipo: "string",  texto: '"cremoso_original"' }
+      ]},
+      { tipo: "white",   texto: "  }" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  return" },
+        { tipo: "white",   texto: " recheio.assar(graus=" },
+        { tipo: "number",  texto: "380" },
+        { tipo: "white",   texto: ")" }
+      ]},
+      { tipo: "comment", texto: "# status: delicioso 🐔" }
     ]
   },
 
-  // ── BEBIDAS ──────────────────────────────────────────
+  // ════════════════════════════════════════
+  // BEBIDAS
+  // ════════════════════════════════════════
+
   "soft-cpp": {
     nome:      "Soft.cpp",
     categoria: "Bebida",
     preco:     "R$ 05,99;",
     imagem:    "img/produtos/soft-cpp.png",
     codigo: [
-      { tipo: "comment", texto: "// Bebida gelada em C++" },
-      { tipo: "keyword", texto: "string" },
+      { tipo: "comment", texto: "// bebida_gelada.cpp — #include <gelo>" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " sabores[] = {" },
-        { tipo: "string",  texto: '"Coca"' },
-        { tipo: "white",   texto: ", " },
-        { tipo: "string",  texto: '"Guaraná"' },
-        { tipo: "white",   texto: "};" }
+        { tipo: "keyword", texto: "vector" },
+        { tipo: "white",   texto: "<string> sabores = {" }
       ]},
-      { tipo: "keyword", texto: "for" },
-      { tipo: "white",   texto: " (auto s : sabores) drink.addIce(s);" }
+      { tipo: "string",  texto: '  "Coca-Cola"' },
+      { tipo: "string",  texto: '  "Guaraná Antarctica"' },
+      { tipo: "string",  texto: '  "Fanta Laranja"' },
+      { tipo: "white",   texto: "};" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "for" },
+        { tipo: "white",   texto: " (auto& s : sabores)" }
+      ]},
+      { tipo: "white",   texto: "  copo.addGelo(s).servir();" },
+      { tipo: "comment", texto: "// temperatura: -2°C ❄️" }
     ]
   },
 
@@ -228,12 +312,27 @@ const produtos = {
     preco:     "R$ 04,99;",
     imagem:    "img/produtos/suco-git.png",
     codigo: [
-      { tipo: "comment", texto: "// Suco extraído com Git" },
-      { tipo: "white",   texto: "git checkout -b " },
-      { tipo: "string",  texto: '"Suco_Laranja"' },
-      { tipo: "white",   texto: "git add gelo acucar" },
-      { tipo: "white",   texto: 'git commit -m ' },
-      { tipo: "string",  texto: '"Suco extraído com sucesso"' }
+      { tipo: "comment", texto: "# versionamento de sabor 🍊" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "git" },
+        { tipo: "white",   texto: " checkout -b " },
+        { tipo: "string",  texto: "laranja_fresca" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "git" },
+        { tipo: "white",   texto: " add gelo acucar hortelã" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "git" },
+        { tipo: "white",   texto: " commit -m " },
+        { tipo: "string",  texto: '"suco extraído com sucesso"' }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "git" },
+        { tipo: "white",   texto: " push origin " },
+        { tipo: "string",  texto: "copo_gelado" }
+      ]},
+      { tipo: "comment", texto: "# Pull request: APROVADO ✅" }
     ]
   },
 
@@ -243,15 +342,27 @@ const produtos = {
     preco:     "R$ 02,99;",
     imagem:    "img/produtos/java-coffee.png",
     codigo: [
-      { tipo: "comment", texto: "// Café que compila o dia" },
-      { tipo: "keyword", texto: "while" },
+      { tipo: "comment", texto: "// JavaCoffee.java — combustível do dev ☕" },
       { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "while" },
         { tipo: "white",   texto: " (!brain.isWorking()) {" }
       ]},
-      { tipo: "white",   texto: "  me.drink(" },
-      { tipo: "keyword", texto: "new" },
-      { tipo: "white",   texto: " Coffee());" },
-      { tipo: "white",   texto: "} // Heap space: Full energy" }
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  Cup c = " },
+        { tipo: "keyword", texto: "new" },
+        { tipo: "white",   texto: " Cup(" },
+        { tipo: "string",  texto: '"Expresso Duplo"' },
+        { tipo: "white",   texto: ");" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  c.addSugar(" },
+        { tipo: "number",  texto: "0" },
+        { tipo: "white",   texto: "); " },
+        { tipo: "comment", texto: "// programmers 😅" }
+      ]},
+      { tipo: "white",   texto: "  me.drink(c); " },
+      { tipo: "white",   texto: "}" },
+      { tipo: "comment", texto: "// heapSpace: FULL ☕" }
     ]
   },
 
@@ -261,35 +372,60 @@ const produtos = {
     preco:     "R$ 01,99;",
     imagem:    "img/produtos/agua.png",
     codigo: [
-      { tipo: "comment", texto: "// Água mineral natural" },
-      { tipo: "white",   texto: "<div " },
-      { tipo: "keyword", texto: 'class' },
-      { tipo: "white",   texto: '="copo">' },
-      { tipo: "white",   texto: "  <span " },
-      { tipo: "keyword", texto: "id" },
-      { tipo: "white",   texto: '="h2o">Mineral Natural</span>' },
-      { tipo: "white",   texto: "</div>" }
+      { tipo: "comment", texto: "<!-- H2O: o elemento mais puro 💧 -->" },
+      { tipo: "white",   texto: "<!DOCTYPE água>" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "<html" },
+        { tipo: "white",   texto: " lang=" },
+        { tipo: "string",  texto: '"hidratação"' },
+        { tipo: "keyword", texto: ">" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  <body" },
+        { tipo: "white",   texto: " class=" },
+        { tipo: "string",  texto: '"bem-gelada"' },
+        { tipo: "keyword", texto: ">" }
+      ]},
+      { tipo: "white",   texto: "    <h1>Mineral Natural</h1>" },
+      { tipo: "white",   texto: "    <p>500ml • pH 7.2</p>" },
+      { tipo: "keyword", texto: "  </body>" },
+      { tipo: "keyword", texto: "</html>" }
     ]
   },
 
-  // ── ACOMPANHAMENTOS ──────────────────────────────────
+  // ════════════════════════════════════════
+  // ACOMPANHAMENTOS
+  // ════════════════════════════════════════
+
   "js-fries": {
     nome:      "JS Fries",
     categoria: "Acompanhamento",
     preco:     "R$ 12,99;",
     imagem:    "img/produtos/js-fries.png",
     codigo: [
-      { tipo: "comment", texto: "// Fritas crocantes em JS" },
-      { tipo: "keyword", texto: "const" },
+      { tipo: "comment", texto: "// fries.js — crocância garantida 🍟" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " fries = Array(" },
+        { tipo: "keyword", texto: "const" },
+        { tipo: "white",   texto: " fries = " },
+        { tipo: "keyword", texto: "Array" },
+        { tipo: "white",   texto: "(" },
         { tipo: "number",  texto: "50" },
-        { tipo: "white",   texto: ").fill('🍟');" }
+        { tipo: "white",   texto: ")" }
       ]},
-      { tipo: "white",   texto: "fries.forEach(f => me.eat(f));" },
-      { tipo: "white",   texto: 'console.log(' },
-      { tipo: "string",  texto: '"Status: 200 OK"' },
-      { tipo: "white",   texto: ');' }
+      { tipo: "white",   texto: "  .fill('🍟')" },
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  .map(f => f.fry(" },
+        { tipo: "number",  texto: "180" },
+        { tipo: "white",   texto: "))" }
+      ]},
+      { tipo: "white",   texto: "  .filter(f => f.isCrunchy());" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "console" },
+        { tipo: "white",   texto: ".log(" },
+        { tipo: "string",  texto: '"Status: 200 OK 🍟"' },
+        { tipo: "white",   texto: ");" }
+      ]},
+      { tipo: "comment", texto: "// SatisfactionLevel: OVERFLOW" }
     ]
   },
 
@@ -299,12 +435,33 @@ const produtos = {
     preco:     "R$ 13,99;",
     imagem:    "img/produtos/nuggets.png",
     codigo: [
-      { tipo: "comment", texto: "// Nuggets crocantes em C++" },
-      { tipo: "keyword", texto: "Nuggets" },
-      { tipo: "white",   texto: " crispy = Nuggets::create(10);" },
-      { tipo: "white",   texto: "crispy.dip(BarbecueSauce);" },
-      { tipo: "keyword", texto: "return" },
-      { tipo: "white",   texto: " crispy.isDelicious();" }
+      { tipo: "comment", texto: "// nuggets.cpp — dourados e crocantes" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "Nuggets" },
+        { tipo: "white",   texto: " box = Nuggets::create(" },
+        { tipo: "number",  texto: "10" },
+        { tipo: "white",   texto: ");" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "box.season(" },
+        { tipo: "string",  texto: '"Tempero Especial"' },
+        { tipo: "white",   texto: ");" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "box.fry(deepOil, " },
+        { tipo: "number",  texto: "180" },
+        { tipo: "white",   texto: ", min(" },
+        { tipo: "number",  texto: "8" },
+        { tipo: "white",   texto: "));" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "box.dip(BarbecueSauce::make());" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "return" },
+        { tipo: "white",   texto: " box.taste(); " },
+        { tipo: "comment", texto: "// DELICIOSO 🍗" }
+      ]}
     ]
   },
 
@@ -314,11 +471,31 @@ const produtos = {
     preco:     "R$ 12,99;",
     imagem:    "img/produtos/onion.png",
     codigo: [
-      { tipo: "comment", texto: "# Anéis de cebola em Python" },
-      { tipo: "keyword", texto: "for" },
-      { tipo: "white",   texto: " ring in onion_rings:" },
-      { tipo: "white",   texto: "  me.consume(ring)" },
-      { tipo: "comment", texto: "# Camadas de sabor otimizadas" }
+      { tipo: "comment", texto: "# onion_rings.py — camadas de sabor 🧅" },
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "def" },
+        { tipo: "white",   texto: " preparar(cebola):" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  aneis = cebola.fatilar(" },
+        { tipo: "keyword", texto: "espessura" },
+        { tipo: "white",   texto: "=" },
+        { tipo: "number",  texto: "1" },
+        { tipo: "white",   texto: ")" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  aneis.empanar(estilo=" },
+        { tipo: "string",  texto: '"artesanal"' },
+        { tipo: "white",   texto: ")" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "white",   texto: "  aneis.fritar(temp=" },
+        { tipo: "number",  texto: "180" },
+        { tipo: "white",   texto: ")" }
+      ]},
+      { tipo: "keyword", texto: "  return" },
+      { tipo: "white",   texto: " aneis.servir()" },
+      { tipo: "comment", texto: "# cada camada: uma surpresa 🧅" }
     ]
   },
 
@@ -328,21 +505,39 @@ const produtos = {
     preco:     "R$ 14,99;",
     imagem:    "img/produtos/rust-ica.png",
     codigo: [
-      { tipo: "comment", texto: "// Batata rústica em Rust" },
-      { tipo: "keyword", texto: "let" },
+      { tipo: "comment", texto: "// rustica.rs — sem erros, só sabor 🥔" },
       { tipo: "inline",  partes: [
-        { tipo: "white",   texto: " batata = Rustica::new(" },
+        { tipo: "keyword", texto: "fn" },
+        { tipo: "white",   texto: " preparar() -> Result<Batata, Error> {" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  let" },
+        { tipo: "white",   texto: " tempero = Blend::of([" },
+        { tipo: "string",  texto: '"alho"' },
+        { tipo: "white",   texto: ", " },
+        { tipo: "string",  texto: '"ervas"' },
+        { tipo: "white",   texto: "]);" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  let" },
+        { tipo: "white",   texto: " batata  = Rustica::new(" },
         { tipo: "string",  texto: '"Crocante"' },
         { tipo: "white",   texto: ");" }
       ]},
-      { tipo: "keyword", texto: "match" },
-      { tipo: "white",   texto: " batata.flavor() {" },
       { tipo: "inline",  partes: [
-        { tipo: "white",  texto: "  Good => println!(" },
-        { tipo: "string", texto: '"Safe and Tasty!"' },
-        { tipo: "white",  texto: ")," }
+        { tipo: "white",   texto: "  batata.assar(temp: " },
+        { tipo: "number",  texto: "220" },
+        { tipo: "white",   texto: ", min: " },
+        { tipo: "number",  texto: "40" },
+        { tipo: "white",   texto: ")?;" }
+      ]},
+      { tipo: "inline",  partes: [
+        { tipo: "keyword", texto: "  Ok" },
+        { tipo: "white",   texto: "(batata) " },
+        { tipo: "comment", texto: "// Safe AND Tasty 🥔" }
       ]},
       { tipo: "white",   texto: "}" }
     ]
   }
+
 };
