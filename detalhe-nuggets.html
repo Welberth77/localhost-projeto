@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalHost — Nuggets++</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Fira+Code:wght@300;400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="detalhe-page">
+
+        <header class="detalhe-header">
+            <a href="acompanhamentos.html" class="voltar-btn">Voltar</a>
+            <img src="img/logo-localhost.png" alt="Logo LocalHost" class="header-logo">
+        </header>
+
+        <div class="produto-imagem-wrapper">
+            <img src="img/produtos/nuggets.png" alt="Nuggets++" class="produto-imagem">
+        </div>
+
+        <span class="categoria-badge">Acompanhamento</span>
+
+        <div class="produto-info">
+            <h1 class="produto-nome">Nuggets++</h1>
+            <span class="produto-preco">R$ 13,99;</span>
+        </div>
+
+        <div class="descricao-section">
+            <div class="divider"></div>
+            <h2 class="section-title">Descrição do Produto</h2>
+            <pre class="code-block"><span class="c-comment">// nuggets.cpp — dourados e crocantes 🍗</span>
+Nuggets box = Nuggets::create(<span class="c-number">10</span>);
+box.season(<span class="c-string">"Tempero Especial"</span>);
+box.fry(deepOil, <span class="c-number">180</span>, min(<span class="c-number">8</span>));
+box.dip(BarbecueSauce::make());
+<span class="c-keyword">return</span> box.taste(); <span class="c-comment">// DELICIOSO</span></pre>
+        </div>
+
+        <div class="commit-section">
+            <div class="divider"></div>
+            <h2 class="section-title">Commit</h2>
+            <textarea class="commit-textarea" placeholder="// commit"></textarea>
+        </div>
+
+        <div class="quantidade-section">
+            <span class="quantidade-label">Quantidade</span>
+            <div class="quantidade-controles">
+                <div class="qty-box">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span class="qty-num" id="qty">1</span>
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
+                <button class="git-add-btn">Git add</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let qty = 1;
+        const qtyEl = document.getElementById('qty');
+        function changeQty(d) {
+            qty = Math.max(1, qty + d);
+            qtyEl.textContent = qty;
+        }
+    </script>
+</body>
+</html>
