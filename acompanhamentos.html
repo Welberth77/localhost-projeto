@@ -17,13 +17,21 @@
     <title>Localhost - Cardápio</title>
     <link rel="stylesheet" href="header-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contraste.css">
 </head>
 <body>
+    <script>
+        if (localStorage.getItem('altoContraste') === 'true') {
+            document.body.classList.add('alto-contraste');
+            const logo = document.querySelector('.header-logo-card img');
+            if (logo) logo.src = 'img/localhost_2.png';
+        }
+    </script>
     <header> <!-- Igor - Cabeçalho padrão com logo e menu de navegação -->
         <div class="header-logo-wrap">
             <div class="header-logo-card">
                 <a href="index.html" aria-label="Localhost — Início">
-                    <img src="img/logo-localhost-cinza.png" alt="Logo LocalHost">
+                    <img src="img/localhost_1.png" alt="Logo LocalHost">
                 </a>
             </div>
         </div>
@@ -35,6 +43,14 @@
             <a href="bebidas.html"           class="nav-tab">Bebidas</a>
             <a href="acompanhamentos.html"   class="nav-tab active">Acompanhamentos</a>
         </nav>
+
+        <button
+            id="btn-contraste"
+            class="btn-contraste"
+            onclick="toggleContraste()"
+            aria-pressed="false"
+            title="Ativar alto contraste">
+        </button>
 
         <script>
         // Rola automaticamente até a tab ativa
@@ -141,5 +157,6 @@
             });
         });
     </script>
+    <script src="contraste.js"></script>
 </body>
 </html>

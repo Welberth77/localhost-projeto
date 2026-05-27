@@ -85,3 +85,42 @@ header {
     color: #0a2e20;
     font-weight: 700;
 }
+
+/* Botão de alto contraste — Igor */
+.btn-contraste {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid #444;
+    background-color: #1e1e1e;
+    cursor: pointer;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: all 150ms ease-out;
+}
+
+.btn-contraste::after {
+    content: '◑';
+    color: #ffffff;
+}
+
+.btn-contraste:hover {
+    border-color: #03dac6;
+}
+
+/* Ajuste da nav para acomodar o botão */
+.header-nav-wrap {
+    display: flex;
+    align-items: center;
+    width: 402px;
+}
+
+.header-nav-wrap .header-nav {
+    flex: 1;
+    min-width: 0;
+}

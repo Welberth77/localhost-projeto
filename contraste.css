@@ -1,0 +1,81 @@
+/* ==========================================
+   Alto Contraste — Igor
+   ========================================== */
+
+body.alto-contraste {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Header */
+body.alto-contraste header,
+body.alto-contraste .header-logo-card {
+    background-color: #ffffff !important;
+    border-bottom: 2px solid #000000 !important;
+}
+
+body.alto-contraste .nav-tab {
+    color: #000000 !important;
+}
+
+body.alto-contraste .nav-tab:hover {
+    color: #03dac6 !important;
+}
+
+body.alto-contraste .nav-tab.active {
+    background-color: #03dac6 !important;
+    color: #000000 !important;
+}
+
+/* Página inicial */
+body.alto-contraste .start-page {
+    background-color: #ffffff !important;
+}
+
+body.alto-contraste .botao-cardapio {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Cards do cardápio */
+body.alto-contraste .produtos {
+    background-color: #ffffff !important;
+}
+
+body.alto-contraste h2,
+body.alto-contraste h3 {
+    color: #000000 !important;
+}
+
+body.alto-contraste .code-descricao {
+    color: #000000 !important;
+}
+
+/* Botão de preço */
+body.alto-contraste .botao-preco {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+/* Botão de contraste em si */
+body.alto-contraste header .btn-contraste {
+    background-color: #1e1e1e !important;
+    border: 1.5px solid #444 !important;
+}
+
+body.alto-contraste header .btn-contraste::after {
+    color: #ffffff !important;
+}
+
+/* Cores do syntax highlight no modo claro — Igor */
+body.alto-contraste .ciano { color: #007a6e !important; }
+body.alto-contraste .roxo  { color: #6a0dad !important; }
+body.alto-contraste .vermelho { color: #8b0000 !important; }
+body.alto-contraste .azul  { color: #1a3a8f !important; }
+body.alto-contraste .laranja { color: #b35c00 !important; }
+body.alto-contraste .cinza { color: #444444 !important; }
+
+body.alto-contraste .btn-contraste::after {
+    color: #000000;
+}
