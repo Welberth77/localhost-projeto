@@ -129,15 +129,21 @@
         const hearts = document.querySelectorAll('.heart-icon');
 
         hearts.forEach(heart => {
-            heart.addEventListener('click', function(e) {
+            heart.setAttribute('tabindex', '0');
+            heart.setAttribute('role', 'button');
+            heart.setAttribute('aria-label', 'Favoritar produto');
+
+            function toggleHeart(e) {
                 e.stopPropagation();
-                if (this.src.includes('coracao-vazio.png')) {
-                    this.src = 'img/coracao-cheio.png';
-                    this.alt = 'coracao cheio';
-                } else {
-                    this.src = 'img/coracao-vazio.png';
-                    this.alt = 'coracao vazio';
-                }
+                const favorito = heart.src.includes('coracao-vazio.png');
+                heart.src = favorito ? 'img/coracao-cheio.png' : 'img/coracao-vazio.png';
+                heart.alt = favorito ? 'coracao cheio' : 'coracao vazio';
+                heart.setAttribute('aria-label', favorito ? 'Remover dos favoritos' : 'Favoritar produto');
+            }
+
+            heart.addEventListener('click', toggleHeart);
+            heart.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleHeart(e); }
             });
         });
 
@@ -150,9 +156,17 @@
         };
         document.querySelectorAll('.item-card[data-produto]').forEach(card => {
             card.style.cursor = 'pointer';
-            card.addEventListener('click', function() {
-                const destino = mapaDetalhes[this.dataset.produto];
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'link');
+
+            function navegar() {
+                const destino = mapaDetalhes[card.dataset.produto];
                 if (destino) window.location.href = destino;
+            }
+
+            card.addEventListener('click', navegar);
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navegar(); }
             });
         });
     </script>
