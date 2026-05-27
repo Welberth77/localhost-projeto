@@ -45,6 +45,14 @@
         </script>
     </header>
     <main>
+        <div class="acessibilidade-container">
+            <button id="toggleFonte">Modo Leitura</button>
+
+            <button id="aumentarFonte">A+</button>
+
+            <button id="diminuirFonte">A-</button>
+        </div>
+
         <section class="produtos">
             <div class="menu-container">
                 <h2>Hambúrgueres</h2>
@@ -148,6 +156,63 @@
                 }
             });
         });
+
+        const toggleFonte = document.getElementById('toggleFonte');
+        const aumentarFonte = document.getElementById('aumentarFonte');
+        const diminuirFonte = document.getElementById('diminuirFonte');
+
+        let tamanhoFonte = 14;
+
+        const tamanhoMinimo = 12;
+        const tamanhoMaximo = 18;
+
+        // Atualiza estado dos botões
+        function atualizarBotoes() {
+
+            aumentarFonte.disabled = tamanhoFonte >= tamanhoMaximo;
+
+            diminuirFonte.disabled = tamanhoFonte <= tamanhoMinimo;
+
+        }
+
+        // Atualiza tamanho da fonte
+        function atualizarFonte() {
+
+            document.querySelectorAll('.code-descricao, .texto-descricao')
+            .forEach(item => {
+                item.style.fontSize = tamanhoFonte + 'px';
+            });
+
+            atualizarBotoes();
+        }
+
+        // modo leitura
+        toggleFonte.addEventListener('click', () => {
+            document.body.classList.toggle('modo-leitura');
+        });
+
+        // aumentar fonte
+        aumentarFonte.addEventListener('click', () => {
+
+            if(tamanhoFonte < tamanhoMaximo){
+                tamanhoFonte += 2;
+                atualizarFonte();
+            }
+
+        });
+
+        // diminuir fonte
+        diminuirFonte.addEventListener('click', () => {
+
+            if(tamanhoFonte > tamanhoMinimo){
+                tamanhoFonte -= 2;
+                atualizarFonte();
+            }
+
+        });
+
+        // inicia estado correto
+        atualizarBotoes();
     </script>
 </body>
 </html>
