@@ -45,6 +45,13 @@
         </script>
     </header>
     <main>
+        <div class="acessibilidade-container">
+            <button id="toggleFonte">Modo Leitura</button>
+
+            <button id="aumentarFonte">A+</button>
+
+            <button id="diminuirFonte">A-</button>
+        </div>
         <section class="produtos">
             <div class="menu-container">
                 <h2>Bebidas</h2>
@@ -52,12 +59,15 @@
                 <div class="item-card" data-produto="soft-cpp">
                     <img src="img/produtos/soft-cpp.png" alt="Soft.cpp" class="item-image">
                     <div class="item-detalhes">
+                        <!-- Descrição Temática -->
                         <div class="item-descricao">
                             <h3>Soft.cpp</h3>
                             <code class="code-descricao">
                                 <span class="azul">string</span> sabores[] = {<span class="ciano">"Coca"</span>, <span class="ciano">"Guaraná"</span>, <br> <span class="ciano">"Fanta"</span>}; <br>
                                 <span class="roxo">for</span> (<span class="roxo">auto</span> s : sabores) drink.addIce(s);
                             </code>
+                            <!-- Descrição Acessível -->
+                            <p class="texto-descricao">Refrigerante com bastante gelo.</p>
                         </div>
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
@@ -71,11 +81,14 @@
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>Suco-Git</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="laranja">git</span> checkout -b <span class="ciano">"Suco_Laranja"</span> <br>
                                 <span class="laranja">git</span> add gelo acucar <br>
                                 <span class="laranja">git</span> commit -m <span class="ciano">"Suco extraido com sucesso"</span>
                             </code>
+                            <!-- Descrição Acessível -->
+                            <p class="texto-descricao">Suco de laranja natural, feito na hora.</p>
                         </div>
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
@@ -89,12 +102,15 @@
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>Java Coffee</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="roxo">while</span> (!brain.isWorking()) { <br>
                                 &nbsp;&nbsp;me.drink(<span class="roxo">new</span> Coffee()); <br>
                                 } <br>
                                 <span class="cinza">// Heap space: Full energy</span>
                             </code>
+                            <!-- Descrição Acessível -->
+                            <p class="texto-descricao">Café expresso, para programadores que precisam de energia.</p>
                         </div>
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
@@ -108,11 +124,14 @@
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>index.html</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 &lt;<span class="vermelho">div</span> <span class="laranja">class</span>=<span class="ciano">"copo"</span>&gt; <br>
                                 &nbsp;&nbsp;&lt;<span class="vermelho">span</span> <span class="laranja">id</span>=<span class="ciano">"h2o"</span>&gt;Mineral Natural&lt;/<span class="vermelho">span</span>&gt; <br>
                                 &lt;/<span class="vermelho">div</span>&gt;
                             </code>
+                            <!-- Descrição Acessível -->
+                            <p class="texto-descricao">Água mineral natural, sem gás.</p>
                         </div>
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
@@ -123,22 +142,9 @@
                 </div>
         </section>
     </main>
+    <script src="js/coracao.js"></script>
+    <script src="js/fonte-acessibilidade.js"></script>
     <script>
-        // Seleciona todos os ícones de coração
-        const hearts = document.querySelectorAll('.heart-icon');
-
-        hearts.forEach(heart => {
-            heart.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (this.src.includes('coracao-vazio.png')) {
-                    this.src = 'img/coracao-cheio.png';
-                    this.alt = 'coracao cheio';
-                } else {
-                    this.src = 'img/coracao-vazio.png';
-                    this.alt = 'coracao vazio';
-                }
-            });
-        });
 
         // Navegar ao clicar no card
         const mapaDetalhes = {

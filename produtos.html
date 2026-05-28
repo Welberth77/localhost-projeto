@@ -45,6 +45,13 @@
         </script>
     </header>
     <main>
+        <div class="acessibilidade-container">
+            <button id="toggleFonte">Modo Leitura</button>
+
+            <button id="aumentarFonte">A+</button>
+
+            <button id="diminuirFonte">A-</button>
+        </div>
         
         <section class="produtos">
             <div class="menu-container">
@@ -56,11 +63,14 @@
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>C++ Burguer</h3>
+                            <!-- Descrição temática -->
                             <code class="code-descricao">
                                 <span class="roxo">class</span> Burger : <span class="roxo">public</span> Satisfaction { <br>
                                     &nbsp;&nbsp;<span class="roxo">public</span>: <span class="ciano">double</span> carne = <span class="ciano">180.0</span>, queijo = <span class="ciano">2.0</span>; <br>
                                 };
                             </code>
+                            <!-- descrição acessível -->
+                            <p class="texto-descricao">Pão brioche, 3x carne bovina 60g, queijo cheddar 2x, queijo mussarela 2x, alface, tomate, cebola e molho especial da casa.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -76,10 +86,13 @@
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>PHPizza</h3>
+                            <!-- Descrição temática -->
                             <code class="code-descricao">
                                 <span class="vermelho">$ingredientes</span> = [<span class="ciano">"Pepperoni"</span>, <span class="ciano">"Mussarela"</span>, <br> <span class="ciano">"Molho"</span>]; <br>
                                 <span class="roxo">foreach</span> (<span class="vermelho">$ingredientes</span> <span class="roxo">as</span> <span class="vermelho">$i</span>) <span class="roxo">echo</span> <span class="vermelho">$i</span>;
                             </code>
+                            <!-- descrição acessível -->
+                            <p class="texto-descricao">Massa fina, molho de tomate, mussarela, pepperoni, orégano e azeite.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -95,10 +108,13 @@
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>Soft.Cpp</h3>
+                            <!-- Descrição temática -->
                             <code class="code-descricao">
                                 <span class="azul">string</span> sabores[] = {<span class="ciano">"Coca"</span>, <span class="ciano">"Guaraná"</span>, <br> <span class="ciano">"Fanta"</span>}; <br>
                                 <span class="roxo">for</span> (<span class="roxo">auto</span> s : sabores) drink.addIce(s);
                             </code>
+                            <!-- descrição acessível -->
+                            <p class="texto-descricao">Refrigerante com bastante gelo.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -114,11 +130,14 @@
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>JS Fries</h3>
+                            <!-- Descrição temática -->
                             <code class="code-descricao">
                                 <span class="roxo">const</span> fries = <span class="azul">Array</span>(<span class="laranja">50</span>).fill('🍟'); <br>
                                 fries.forEach(f => me.eat(f)); <br>
                                 <span class="azul">console</span>.log(<span class="ciano">"Status: 200 OK (Satisfied)"</span>);
                             </code>
+                            <!-- descrição acessível -->
+                            <p class="texto-descricao">Batata frita crocante, servida com ketchup</p>
                         </div>
                         
                         <div class="footer-info">
@@ -130,22 +149,9 @@
             </div>
         </section>
     </main>
+    <script src="js/coracao.js"></script>
+    <script src="js/fonte-acessibilidade.js"></script>
     <script>
-        // Seleciona todos os ícones de coração
-        const hearts = document.querySelectorAll('.heart-icon');
-
-        hearts.forEach(heart => {
-            heart.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (this.src.includes('coracao-vazio.png')) {
-                    this.src = 'img/coracao-cheio.png';
-                    this.alt = 'coracao cheio';
-                } else {
-                    this.src = 'img/coracao-vazio.png';
-                    this.alt = 'coracao vazio';
-                }
-            });
-        });
 
         // Navegar ao clicar no card
         const mapaDetalhes = {
