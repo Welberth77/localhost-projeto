@@ -61,14 +61,23 @@
         </script>
     </header>
     <main>
+        <div class="acessibilidade-container">
+            <button id="toggleFonte">Modo Leitura</button>
+
+            <button id="aumentarFonte">A+</button>
+
+            <button id="diminuirFonte">A-</button>
+        </div>
+
         <section class="produtos">
             <div class="menu-container">
                 <h2>Hambúrgueres</h2>
                 <!-- PRODUTO 1 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="pyburguer">
                     <img src="img/produtos/pyburguer.png" alt="PyBurguer" class="item-image">
                     
                     <div class="item-detalhes">
+                        <!-- Descrição Temática -->
                         <div class="item-descricao">
                             <h3>PyBurguer</h3>
                             <code class="code-descricao">
@@ -76,6 +85,8 @@
                                 <span class="ciano">"pao_brioche"</span>] <br>
                                 print(<span class="ciano">"SatisfactionLevel: CRITICAL_MAX"</span>)
                             </code>
+                        <!-- Descrição Acessível -->
+                        <p class="texto-descricao">Hambúrguer com 180g de carne bovina, queijo cheddar derretido e pão brioche.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -85,17 +96,20 @@
                     </div>
                 </div>
                 <!-- PRODUTO 2 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="fullstack-burguer">
                     <img src="img/produtos/fullstack-burguer.png" alt="FullStack Burguer" class="item-image">
                     
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>FullStack Burguer</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="roxo">const</span> stack = [<span class="ciano">'Pão</span>, <span class="ciano">'2x Carne'</span>, <span class="ciano">'Ovo'</span>, <span class="ciano">'Bacon'</span>]; <br>
                                 stack.push(<span class="ciano">'Queijo'</span>); <br>
                                 return stack.render();
                             </code>
+                        <!-- Descrição Acessível -->
+                        <p class="texto-descricao">Hambúrguer completo com pão brioche, duas carnes, ovo, bacon crocante e muito queijo.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -105,17 +119,20 @@
                     </div>
                 </div>
                 <!-- PRODUTO 3 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="cpp-burguer">
                     <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
                     
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>C++ Burguer</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="roxo">class</span> Burger : <span class="roxo">public</span> Satisfaction { <br>
                                     &nbsp;&nbsp;<span class="roxo">public</span>: <span class="ciano">double</span> carne = <span class="ciano">180.0</span>, queijo = <span class="ciano">2.0</span>; <br>
                                 };
                             </code>
+                        <!-- Descrição Acessível -->
+                        <p class="texto-descricao">Hambúrguer artesanal com 180g de carne bovina e duas generosas camadas de queijo derretido.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -125,18 +142,21 @@
                     </div>
                 </div>
                 <!-- PRODUTO 4 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="bacon">
                     <img src="img/produtos/bacon.png" alt="Bacon#" class="item-image">
                     
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>Bacon#</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="roxo">var</span> bacon = <span class="roxo">new</span> Ingredient("<span class="ciano">Crocante</span>"); <br>
                                 <span class="roxo">while</span> (hungry) { <br>
                                     &nbsp;&nbsp;me.eat(bacon); <br>
                                 }
                             </code>
+                        <!-- Descrição Acessível -->
+                        <p class="texto-descricao">Hambúrguer carregado com bacon crocante, carne suculenta e queijo. Perfeito para quem ama um sabor intenso e viciante.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -148,20 +168,21 @@
             </div>
         </section>
     </main>
+    <script src="js/coracao.js"></script>
+    <script src="js/fonte-acessibilidade.js"></script>
     <script>
-        // Seleciona todos os ícones de coração
-        const hearts = document.querySelectorAll('.heart-icon');
-
-        hearts.forEach(heart => {
-            heart.addEventListener('click', function() {
-                // Verifica se a imagem atual é a do coração vazio
-                if (this.src.includes('coracao-vazio.png')) {
-                    this.src = 'img/coracao-cheio.png';
-                    this.alt = 'coracao cheio';
-                } else {
-                    this.src = 'img/coracao-vazio.png';
-                    this.alt = 'coracao vazio';
-                }
+        // Navegar ao clicar no card
+        const mapaDetalhes = {
+            "pyburguer":        "detalhe-pyburguer.html",
+            "fullstack-burguer":"detalhe-fullstack-burguer.html",
+            "cpp-burguer":      "detalhe-cpp-burguer.html",
+            "bacon":            "detalhe-bacon.html"
+        };
+        document.querySelectorAll('.item-card[data-produto]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const destino = mapaDetalhes[this.dataset.produto];
+                if (destino) window.location.href = destino;
             });
         });
     </script>

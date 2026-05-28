@@ -61,20 +61,30 @@
         </script>
     </header>
     <main>
+        <div class="acessibilidade-container">
+            <button id="toggleFonte">Modo Leitura</button>
+
+            <button id="aumentarFonte">A+</button>
+
+            <button id="diminuirFonte">A-</button>
+        </div>
         <section class="produtos">
             <div class="menu-container">
                 <h2>Pizzas</h2>
                 <!-- PRODUTO 1 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="phpizza">
                     <img src="img/produtos/PHPizza.png" alt="PHPizza" class="item-image">
                     
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>PHPizza</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="vermelho">$ingredientes</span> = [<span class="ciano">"Pepperoni"</span>, <span class="ciano">"Mussarela"</span>, <br> <span class="ciano">"Molho"</span>]; <br>
                                 <span class="roxo">foreach</span> (<span class="vermelho">$ingredientes</span> <span class="roxo">as</span> <span class="vermelho">$i</span>) <span class="roxo">echo</span> <span class="vermelho">$i</span>;
                             </code>
+                            <!-- Descrição Acessível -->
+                            <p class="texto-descricao">Massa fina, molho de tomate, mussarela, pepperoni, orégano e azeite.</p>
                         </div>
                         
                         <div class="footer-info">
@@ -84,34 +94,40 @@
                     </div>
                 </div>
                 <!-- PRODUTO 2 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="queijo-fullstack">
                     <img src="img/produtos/queijo-fullstack.png" alt="Queijo Fullstack" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
-                            <h3>Queijo Fullstack</h3>
+                            <h3>Queijo FullStack</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="roxo">const</span> queijos = [<span class="ciano">'Mussarela'</span>, <span class="ciano">'Parmesão'</span>, <span class="ciano">'Gorgonzola'</span>, <span class="ciano">'Provolone'</span>]; <br>
                                 <span class="roxo">const</span> blend = queijos.join(<span class="ciano">' + '</span>); <br>
                                 <span class="azul">console</span>.log(<span class="ciano">`Pizza pronta: ${blend}`</span>);
                             </code>
+                        <!-- Descrição Acessível -->
+                        <p class="texto-descricao">Pizza com generosa quantidade de queijos: mussarela, parmesão, gorgonzola e provolone.</p>
                         </div>
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
-                            <button class="botao-preco">R$ 31.99;</button>
+                            <button class="botao-preco">R$ 33.99;</button>
                         </div>
                     </div>
                 </div>
                 <!-- PRODUTO 3 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="javarita">
                     <img src="img/produtos/javarita.png" alt="Javarita" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>Javarita</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 <span class="azul">String</span> base = <span class="ciano">"Manjericão e Tomate"</span>; <br>
                                 System.out.println(<span class="ciano">"Compilando Marguerita..."</span>); <br>
                                 <span class="roxo">this</span>.setStatus(<span class="ciano">"Sabor Pronta"</span>);
                             </code>
+                        <!-- Descrição Acessível -->
+                        <p class="texto-descricao">Pizza marguerita clássica com molho de tomate, mussarela, manjericão fresco e tomate.</p>
                         </div>
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
@@ -120,16 +136,19 @@
                     </div>
                 </div>
                 <!-- PRODUTO 4 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="frango-catupy">
                     <img src="img/produtos/frango-com-catupy.png" alt="Frango com CatuPy" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
                             <h3>Frango com CatuPy</h3>
+                            <!-- Descrição Temática -->
                             <code class="code-descricao">
                                 base, extra = <span class="ciano">"Frango Desfiado"</span>, <span class="ciano">"Catupiry"</span> <br>
                                 <span class="cinza"># Otimizando entrega do sabor</span> <br>
                                 <span class="azul">print</span>(<span class="ciano">f"Status: {base} & {extra}"</span>)
                             </code>
+                        <!-- Descrição Acessível -->
+                        <p class="texto-descricao">Pizza de frango desfiado com catupiry, mussarela e molho especial.</p>
                         </div>
                         <div class="footer-info">
                             <img src="img/coracao-vazio.png" alt="coracao vazio" class="heart-icon">
@@ -139,20 +158,21 @@
                 </div>
         </section>
     </main>
+    <script src="js/coracao.js"></script>
+    <script src="js/fonte-acessibilidade.js"></script>
     <script>
-        // Seleciona todos os ícones de coração
-        const hearts = document.querySelectorAll('.heart-icon');
-
-        hearts.forEach(heart => {
-            heart.addEventListener('click', function() {
-                // Verifica se a imagem atual é a do coração vazio
-                if (this.src.includes('coracao-vazio.png')) {
-                    this.src = 'img/coracao-cheio.png';
-                    this.alt = 'coracao cheio';
-                } else {
-                    this.src = 'img/coracao-vazio.png';
-                    this.alt = 'coracao vazio';
-                }
+        // Navegar ao clicar no card
+        const mapaDetalhes = {
+            "phpizza":          "detalhe-phpizza.html",
+            "queijo-fullstack": "detalhe-queijo-fullstack.html",
+            "javarita":         "detalhe-javarita.html",
+            "frango-catupy":    "detalhe-frango-catupy.html"
+        };
+        document.querySelectorAll('.item-card[data-produto]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const destino = mapaDetalhes[this.dataset.produto];
+                if (destino) window.location.href = destino;
             });
         });
     </script>
