@@ -57,7 +57,7 @@
             <div class="menu-container">
                 <h2>Hambúrgueres</h2>
                 <!-- PRODUTO 1 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="pyburguer">
                     <img src="img/produtos/pyburguer.png" alt="PyBurguer" class="item-image">
                     
                     <div class="item-detalhes">
@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 2 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="fullstack-burguer">
                     <img src="img/produtos/fullstack-burguer.png" alt="FullStack Burguer" class="item-image">
                     
                     <div class="item-detalhes">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 3 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="cpp-burguer">
                     <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="item-image">
                     
                     <div class="item-detalhes">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 4 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="bacon">
                     <img src="img/produtos/bacon.png" alt="Bacon#" class="item-image">
                     
                     <div class="item-detalhes">
@@ -154,5 +154,21 @@
     </main>
     <script src="js/coracao.js"></script>
     <script src="js/fonte-acessibilidade.js"></script>
+    <script>
+        // Navegar ao clicar no card
+        const mapaDetalhes = {
+            "pyburguer":        "detalhe-pyburguer.html",
+            "fullstack-burguer":"detalhe-fullstack-burguer.html",
+            "cpp-burguer":      "detalhe-cpp-burguer.html",
+            "bacon":            "detalhe-bacon.html"
+        };
+        document.querySelectorAll('.item-card[data-produto]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const destino = mapaDetalhes[this.dataset.produto];
+                if (destino) window.location.href = destino;
+            });
+        });
+    </script>
 </body>
 </html>

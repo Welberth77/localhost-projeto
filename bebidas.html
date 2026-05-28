@@ -56,7 +56,7 @@
             <div class="menu-container">
                 <h2>Bebidas</h2>
                 <!-- PRODUTO 1 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="soft-cpp">
                     <img src="img/produtos/soft-cpp.png" alt="Soft.cpp" class="item-image">
                     <div class="item-detalhes">
                         <!-- Descrição Temática -->
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 2 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="suco-git">
                     <img src="img/produtos/suco-git.png" alt="Suco-Git" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 3 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="java-coffee">
                     <img src="img/produtos/java-coffee.png" alt="Java Coffee" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <!-- PRODUTO 4 -->
-                <div class="item-card">
+                <div class="item-card" data-produto="agua">
                     <img src="img/produtos/agua.png" alt="index.html" class="item-image">
                     <div class="item-detalhes">
                         <div class="item-descricao">
@@ -144,5 +144,22 @@
     </main>
     <script src="js/coracao.js"></script>
     <script src="js/fonte-acessibilidade.js"></script>
+    <script>
+
+        // Navegar ao clicar no card
+        const mapaDetalhes = {
+            "soft-cpp":    "detalhe-soft-cpp.html",
+            "suco-git":    "detalhe-suco-git.html",
+            "java-coffee": "detalhe-java-coffee.html",
+            "agua":        "detalhe-agua.html"
+        };
+        document.querySelectorAll('.item-card[data-produto]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const destino = mapaDetalhes[this.dataset.produto];
+                if (destino) window.location.href = destino;
+            });
+        });
+    </script>
 </body>
 </html>
