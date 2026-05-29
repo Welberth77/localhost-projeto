@@ -23,10 +23,12 @@
     <script>
         if (localStorage.getItem('altoContraste') === 'true') {
             document.body.classList.add('alto-contraste');
-            const logo = document.querySelector('.header-logo-card img');
-            if (logo) logo.src = 'img/localhost_2.png';
+            document.addEventListener('DOMContentLoaded', function() {
+                const logo = document.querySelector('.header-logo-card img');
+                if (logo) logo.src = 'img/localhost_2.png';
+            });
         }
-    </script>
+</script>
     <header> <!-- Igor - Cabeçalho padrão com logo e menu de navegação -->
         <div class="header-logo-wrap">
             <div class="header-logo-card">
@@ -44,14 +46,6 @@
             <a href="acompanhamentos.html"   class="nav-tab">Acompanhamentos</a>
         </nav>
 
-        <button
-            id="btn-contraste"
-            class="btn-contraste"
-            onclick="toggleContraste()"
-            aria-pressed="false"
-            title="Ativar alto contraste">
-        </button>
-
         <script>
         // Rola automaticamente até a tab ativa
         const activeTab = document.querySelector('.nav-tab.active');
@@ -67,6 +61,14 @@
             <button id="aumentarFonte">A+</button>
 
             <button id="diminuirFonte">A-</button>
+
+            <button
+                id="btn-contraste"
+                class="btn-contraste"
+                onclick="toggleContraste()"
+                aria-pressed="false"
+                title="Ativar alto contraste">
+            </button>
         </div>
 
         <section class="produtos">
@@ -171,18 +173,33 @@
     <script src="js/coracao.js"></script>
     <script src="js/fonte-acessibilidade.js"></script>
     <script>
-        // Navegar ao clicar no card
         const mapaDetalhes = {
             "pyburguer":        "detalhe-pyburguer.html",
-            "fullstack-burguer":"detalhe-fullstack-burguer.html",
+            "fullstack-burguer": "detalhe-fullstack-burguer.html",
             "cpp-burguer":      "detalhe-cpp-burguer.html",
             "bacon":            "detalhe-bacon.html"
         };
+
         document.querySelectorAll('.item-card[data-produto]').forEach(card => {
             card.style.cursor = 'pointer';
-            card.addEventListener('click', function() {
+
+            // Só redireciona se o clique não for no coração
+            card.addEventListener('click', function(e) {
+                if (e.target.classList.contains('heart-icon')) return;
                 const destino = mapaDetalhes[this.dataset.produto];
                 if (destino) window.location.href = destino;
+            });
+        });
+
+        // Coração focável pelo teclado
+        document.querySelectorAll('.heart-icon').forEach(heart => {
+            heart.setAttribute('tabindex', '0');
+            heart.setAttribute('role', 'button');
+            heart.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    heart.click();
+                }
             });
         });
     </script>

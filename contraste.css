@@ -79,3 +79,50 @@ body.alto-contraste .cinza { color: #444444 !important; }
 body.alto-contraste .btn-contraste::after {
     color: #000000;
 }
+
+body.alto-contraste .texto-descricao {
+    color: #000000;
+}
+
+body.alto-contraste .acessibilidade-container {
+    background-color: #ffffff;
+    border-bottom: 1px solid #000000;
+}
+
+/* Página de detalhe — Igor */
+body.alto-contraste .detalhe-page {
+    background: #ffffff;
+}
+
+body.alto-contraste .produto-nome,
+body.alto-contraste .section-title,
+body.alto-contraste .quantidade-label,
+body.alto-contraste .qty-num,
+body.alto-contraste .qty-btn,
+body.alto-contraste .voltar-btn {
+    color: #000000;
+}
+
+body.alto-contraste .produto-preco {
+    background: #ffffff;
+    color: #b35c00;
+    border: 2px solid #000000;
+}
+
+body.alto-contraste .commit-textarea {
+    background: #f0f0f0;
+    color: #000000;
+}
+
+body.alto-contraste .qty-box {
+    background: #e0e0e0;
+}
+
+body.alto-contraste .code-block {
+    color: #000000;
+}
+
+body.alto-contraste .c-comment { color: #444444; }
+body.alto-contraste .c-keyword  { color: #6a0dad; }
+body.alto-contraste .c-number   { color: #007a6e; }
+body.alto-contraste .c-string   { color: #b35c00; }
