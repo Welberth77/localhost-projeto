@@ -23,7 +23,16 @@
                 title="Ativar alto contraste">
             </button>
         </header>
-
+        <div vw class="enabled"> <!-- Danilo - integrar do Vlibras -->
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
         <div class="produto-imagem-wrapper">
             <img src="img/produtos/c++burguer.png" alt="C++ Burguer" class="produto-imagem">
         </div>
