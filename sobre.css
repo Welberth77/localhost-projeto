@@ -31,6 +31,27 @@ body {
     min-height: 100vh;
 }
 
+/* ── Botão voltar no header ──────────────────────────── */
+.voltar-btn {
+    font-family: var(--f-ui);
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    padding: 8px 14px;
+    display: inline-block;
+    transition: color 150ms ease-out;
+}
+
+.voltar-btn:hover {
+    color: var(--teal);
+}
+
+body.alto-contraste .voltar-btn {
+    color: #000000 !important;
+}
+
 /* ── Main container ──────────────────────────────────── */
 main {
     width: 402px;
@@ -39,33 +60,6 @@ main {
     flex: 1;
 }
 
-/* ── Botões de acessibilidade ────────────────────────── */
-.acessibilidade-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 0;
-    border-bottom: 0.5px solid var(--dgray);
-    margin-bottom: 24px;
-}
-
-.acessibilidade-container button {
-    font-family: var(--f-code);
-    font-size: 10px;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 999px;
-    border: 1px solid var(--dgray);
-    background: var(--card);
-    color: var(--gray);
-    cursor: pointer;
-    transition: all 150ms ease-out;
-}
-
-.acessibilidade-container button:hover {
-    border-color: var(--teal);
-    color: var(--teal);
-}
 
 /* ── Hero / Abertura ─────────────────────────────────── */
 .sobre-hero {
@@ -320,6 +314,34 @@ main {
     color: var(--teal);
 }
 
+/* Rodapé de navegação — mesmo estilo do cardapio.css */
+.rodape {
+    width: 100%;
+    background-color: var(--card);
+    padding: 20px;
+    text-align: center;
+}
+
+.rodape a {
+    font-family: var(--f-code);
+    font-size: 11px;
+    color: var(--mgray);
+    text-decoration: none;
+    transition: color 150ms ease-out;
+}
+
+.rodape a:hover {
+    color: var(--teal);
+}
+
+body.alto-contraste .rodape {
+    background-color: #e0e0e0 !important;
+}
+
+body.alto-contraste .rodape a {
+    color: #333333 !important;
+}
+
 /* ══════════════════════════════════════════════════════
    ALTO CONTRASTE — sobre.css
 ══════════════════════════════════════════════════════ */
@@ -365,16 +387,6 @@ body.alto-contraste .secao-titulo     { color: #000000 !important; }
 body.alto-contraste .sobre-footer p   { color: #333333 !important; }
 body.alto-contraste .sobre-footer span { color: #007a6e !important; }
 
-body.alto-contraste .acessibilidade-container {
-    background-color: #ffffff;
-    border-bottom: 1px solid #000000;
-}
-
-body.alto-contraste .acessibilidade-container button {
-    background: #e0e0e0 !important;
-    color: #000000 !important;
-    border-color: #000000 !important;
-}
 
 body.alto-contraste .badge {
     background: rgba(0, 122, 110, 0.15) !important;
