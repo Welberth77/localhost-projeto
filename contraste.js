@@ -15,6 +15,6 @@ function toggleContraste() {
     // Logo das páginas de detalhe
     const logoDetalhe = document.querySelector('.header-logo');
     if (logoDetalhe) {
-        logoDetalhe.src = ativo ? 'img/localhost_2.png' : 'img/logo-localhost.png';
+        logoDetalhe.src = ativo ? 'img/localhost_2.png' : 'img/localhost_1.png';
     }
 }
