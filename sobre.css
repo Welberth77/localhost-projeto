@@ -148,6 +148,45 @@ main {
     margin-top: 12px;
 }
 
+/* ══════════════════════════════════════════════════════
+   MODO LEITURA — sobre.css
+   Esconde o terminal de código e mostra o texto simples
+══════════════════════════════════════════════════════ */
+
+body.modo-leitura .terminal-box {
+    display: none;
+}
+
+body.modo-leitura .sobre-texto {
+    display: block;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+body.modo-leitura .objetivo-card p {
+    font-family: var(--f-name);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+body.modo-leitura .tech-desc {
+    display: none;
+}
+
+body.modo-leitura .tech-nome {
+    font-size: 13px;
+}
+
+body.modo-leitura .membro-funcao {
+    font-family: var(--f-ui);
+    font-size: 11px;
+}
+
+body.modo-leitura .sobre-footer p {
+    font-family: var(--f-ui);
+    font-size: 11px;
+}
+
 /* ── Seções genéricas ────────────────────────────────── */
 .secao {
     margin-bottom: 32px;
