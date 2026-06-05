@@ -4,15 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contraste.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>LocalHost</title>
 </head>
 <body>
+    <script>
+        if (localStorage.getItem('altoContraste') === 'true') {
+            document.body.classList.add('alto-contraste');
+        }
+    </script>
+
     <section class="start-page">
-        <img src="img/logo-localhost.png" alt="Logo LocalHost">
-        <a class="botao-cardapio" href="produtos.html">Cardápio digital</a>
+        <canvas id="matrix-canvas"></canvas>
+        <img src="img/localhost_1.png" alt="Logo LocalHost" id="logo">
+        <a class="botao-cardapio" href="produtos.html" id="btn-cardapio">Cardápio digital</a>
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // ── Matrix dentro do .start-page ──────────────
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+            const section = document.querySelector('.start-page');
+
+            function resizeCanvas() {
+                canvas.width  = section.offsetWidth;
+                canvas.height = section.offsetHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const chars = '01{}[]();=>const let var function return class'.split('');
+            const fontSize = 11;
+            const columns = Math.floor(canvas.width / fontSize);
+            const drops = Array(columns).fill(0).map(() => Math.random() * -50);
+
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(18, 18, 18, 0.06)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#03dac625';
+                ctx.font = fontSize + 'px Fira Code';
+
+                drops.forEach((y, i) => {
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(char, i * fontSize, y * fontSize);
+                    if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                });
+            }
+
+            setInterval(drawMatrix, 60);
+
+            // ── GSAP — logo ───────────────────────────────
+            const tl = gsap.timeline();
+
+            tl.from('#logo', {
+                duration: 0.6,
+                opacity: 0,
+                scaleX: 1.08,
+                skewX: 6,
+                ease: 'power4.out'
+            })
+            .to('#logo', { duration: 0.08, skewX: -4, ease: 'none' })
+            .to('#logo', { duration: 0.08, skewX: 0,  ease: 'none' });
+
+            // ── GSAP — botão ──────────────────────────────
+            tl.from('#btn-cardapio', {
+                duration: 0.4,
+                opacity: 0,
+                y: 10,
+                ease: 'power2.out'
+            }, '+=0.2')
+            .to('#btn-cardapio', {
+                duration: 0.06,
+                skewX: 8,
+                ease: 'none',
+                repeat: 2,
+                yoyo: true
+            });
+
+            gsap.to('#btn-cardapio', {
+                boxShadow: '0 0 12px #03dac6, 0 0 24px #03dac640',
+                repeat: -1,
+                yoyo: true,
+                duration: 1.2,
+                ease: 'sine.inOut',
+                delay: 2
+            });
+
+        });
+    </script>
+    <script src="contraste.js"></script>
 </body>
 </html>
