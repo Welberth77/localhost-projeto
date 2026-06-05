@@ -8,14 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Fira+Code:wght@300;400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contraste.css">
 </head>
 <body>
     <div class="detalhe-page">
+        
+        <!-- Danilo - integrar do Vlibras -->
+        <div vw class="enabled"> 
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
 
         <!-- HEADER -->
         <header class="detalhe-header">
             <a href="javascript:history.back()" class="voltar-btn">Voltar</a>
-            <img src="img/logo-localhost.png" alt="Logo LocalHost" class="header-logo">
+            <img src="img/localhost_1.png" alt="Logo LocalHost" class="header-logo">
+            <button
+                id="btn-contraste"
+                class="btn-contraste"
+                onclick="toggleContraste()"
+                aria-pressed="false"
+                title="Ativar alto contraste">
+            </button>
         </header>
 
         <!-- IMAGEM DO PRODUTO -->
@@ -116,5 +136,6 @@
 
         carregarProduto();
     </script>
+    <script src="contraste.js"></script>
 </body>
 </html>
