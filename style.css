@@ -82,6 +82,11 @@ body {
     flex-shrink: 0;
 }
 
+.detalhe-header .btn-contraste {
+    position: absolute;
+    right: 0;
+}
+
 .voltar-btn {
     position: absolute;
     left: 0;
@@ -303,42 +308,27 @@ body {
 
 .git-add-btn:hover { filter: brightness(1.08); }
 
-/* ══════════════════════════════════════════════════════
-   FOCO VISÍVEL (Acessibilidade — Navegação por Teclado)
-══════════════════════════════════════════════════════ */
-
-/* Regra base: todos os elementos focáveis */
-*:focus-visible {
-    outline: 2px solid var(--teal);
-    outline-offset: 3px;
-}
-
-/* Elementos com borda arredondada pill */
-.botao-cardapio:focus-visible,
-.nav-tab:focus-visible,
-.botao-preco:focus-visible,
-.git-add-btn:focus-visible,
-.voltar-btn:focus-visible {
-    border-radius: 100px;
-}
-
-/* Cards de produto */
-.item-card:focus-visible {
-    border-radius: 16px;
-}
-
-/* Textarea de commit (sem offset para ficar colada na borda) */
-.commit-textarea:focus-visible {
-    outline-offset: 0;
-    border-radius: 12px;
-}
-
-/* Botões de quantidade (circulares) */
-.qty-btn:focus-visible {
+/* Botão de alto contraste — Igor */
+.btn-contraste {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
+    border: 1.5px solid #444;
+    background-color: #1e1e1e;
+    cursor: pointer;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: all 150ms ease-out;
 }
 
-/* Ícone de coração */
-.heart-icon:focus-visible {
-    border-radius: 4px;
+.btn-contraste::after {
+    content: '◑';
+    color: #ffffff;
+}
+
+.btn-contraste:hover {
+    border-color: #03dac6;
 }
