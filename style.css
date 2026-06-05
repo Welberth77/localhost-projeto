@@ -228,7 +228,7 @@ body {
     font-size: 9px;
     padding: 12px 14px;
     resize: none;
-    outline: none;
+    outline: none; /* substituído por :focus-visible abaixo */
     letter-spacing: 0.3px;
 }
 

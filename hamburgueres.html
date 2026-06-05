@@ -197,6 +197,11 @@
                 if (e.target.classList.contains('heart-icon')) return;
                 const destino = mapaDetalhes[this.dataset.produto];
                 if (destino) window.location.href = destino;
+            }
+
+            card.addEventListener('click', navegar);
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navegar(); }
             });
         });
 
