@@ -1,0 +1,382 @@
+/* ==========================================
+   Sobre Nós — sobre.css
+   ========================================== */
+
+/* ── Reset & Tokens ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:     #121212;
+    --card:   #1e1e1e;
+    --card2:  #2a2a2a;
+    --teal:   #03dac6;
+    --orange: #ff8c00;
+    --purple: #bb86fc;
+    --white:  #ffffff;
+    --gray:   #999999;
+    --mgray:  #6e6e6e;
+    --dgray:  #3a3a3a;
+
+    --f-ui:   'Dosis', sans-serif;
+    --f-name: 'Roboto', sans-serif;
+    --f-code: 'Fira Code', monospace;
+}
+
+/* ── Body ────────────────────────────────────────────── */
+body {
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ── Main container ──────────────────────────────────── */
+main {
+    width: 402px;
+    background: var(--bg);
+    padding: 0 16px 48px;
+    flex: 1;
+}
+
+/* ── Botões de acessibilidade ────────────────────────── */
+.acessibilidade-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--dgray);
+    margin-bottom: 24px;
+}
+
+.acessibilidade-container button {
+    font-family: var(--f-code);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--dgray);
+    background: var(--card);
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 150ms ease-out;
+}
+
+.acessibilidade-container button:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+}
+
+/* ── Hero / Abertura ─────────────────────────────────── */
+.sobre-hero {
+    margin-bottom: 32px;
+}
+
+.sobre-hero .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(3, 218, 198, 0.12);
+    border-radius: 999px;
+    font-family: var(--f-code);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+}
+
+.sobre-hero h1 {
+    font-family: var(--f-name);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.sobre-hero h1 span {
+    color: var(--teal);
+}
+
+/* ── Terminal de descrição ───────────────────────────── */
+.terminal-box {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.terminal-topbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--card2);
+    border-bottom: 1px solid var(--dgray);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot-red    { background: #ff5f57; }
+.dot-yellow { background: #febc2e; }
+.dot-green  { background: #28c840; }
+
+.terminal-filename {
+    font-family: var(--f-code);
+    font-size: 9px;
+    color: var(--mgray);
+    margin-left: 6px;
+}
+
+.terminal-body {
+    padding: 14px 16px;
+    font-family: var(--f-code);
+    font-size: 10px;
+    line-height: 2;
+}
+
+/* Syntax highlight do terminal */
+.t-comment { color: var(--mgray); }
+.t-key     { color: var(--purple); }
+.t-str     { color: var(--orange); }
+.t-teal    { color: var(--teal); }
+.t-white   { color: var(--white); }
+
+/* ── Texto acessível abaixo do terminal ──────────────── */
+.sobre-texto {
+    font-family: var(--f-ui);
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+/* ── Seções genéricas ────────────────────────────────── */
+.secao {
+    margin-bottom: 32px;
+}
+
+.secao-titulo {
+    font-family: var(--f-name);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.secao-titulo::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--dgray);
+}
+
+/* ── Objetivo ────────────────────────────────────────── */
+.objetivo-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    border-left: 3px solid var(--teal);
+}
+
+.objetivo-card p {
+    font-family: var(--f-ui);
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+/* ── Tecnologias ─────────────────────────────────────── */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.tech-item {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: border 150ms ease-out;
+    border: 1px solid transparent;
+}
+
+.tech-item:hover {
+    border-color: var(--teal);
+}
+
+.tech-icon {
+    font-family: var(--f-code);
+    font-size: 16px;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.tech-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tech-nome {
+    font-family: var(--f-ui);
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--white);
+}
+
+.tech-desc {
+    font-family: var(--f-code);
+    font-size: 9px;
+    color: var(--mgray);
+}
+
+/* ── Equipe ──────────────────────────────────────────── */
+.equipe-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.membro-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.membro-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--card2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--f-code);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    flex-shrink: 0;
+    border: 1px solid var(--dgray);
+}
+
+.membro-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.membro-nome {
+    font-family: var(--f-name);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--white);
+    margin-bottom: 2px;
+}
+
+.membro-funcao {
+    font-family: var(--f-code);
+    font-size: 9.5px;
+    color: var(--teal);
+}
+
+.membro-tag {
+    font-family: var(--f-code);
+    font-size: 9px;
+    color: var(--mgray);
+    background: var(--card2);
+    padding: 3px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+/* ── Rodapé ──────────────────────────────────────────── */
+.sobre-footer {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.sobre-footer p {
+    font-family: var(--f-code);
+    font-size: 9px;
+    color: var(--mgray);
+}
+
+.sobre-footer span {
+    color: var(--teal);
+}
+
+/* ══════════════════════════════════════════════════════
+   ALTO CONTRASTE — sobre.css
+══════════════════════════════════════════════════════ */
+body.alto-contraste main {
+    background: #ffffff;
+}
+
+body.alto-contraste .terminal-box,
+body.alto-contraste .terminal-topbar,
+body.alto-contraste .objetivo-card,
+body.alto-contraste .tech-item,
+body.alto-contraste .membro-card {
+    background: #f0f0f0 !important;
+    border-color: #000000 !important;
+}
+
+body.alto-contraste .terminal-body,
+body.alto-contraste .t-white,
+body.alto-contraste .membro-nome,
+body.alto-contraste .tech-nome,
+body.alto-contraste .sobre-hero h1 {
+    color: #000000 !important;
+}
+
+body.alto-contraste .t-comment,
+body.alto-contraste .t-str,
+body.alto-contraste .sobre-texto,
+body.alto-contraste .objetivo-card p,
+body.alto-contraste .tech-desc,
+body.alto-contraste .membro-tag {
+    color: #333333 !important;
+}
+
+body.alto-contraste .t-key            { color: #6a0dad !important; }
+
+body.alto-contraste .t-teal,
+body.alto-contraste .membro-funcao,
+body.alto-contraste .membro-avatar,
+body.alto-contraste .sobre-hero h1 span { color: #007a6e !important; }
+
+body.alto-contraste .secao-titulo     { color: #000000 !important; }
+
+body.alto-contraste .sobre-footer p   { color: #333333 !important; }
+body.alto-contraste .sobre-footer span { color: #007a6e !important; }
+
+body.alto-contraste .acessibilidade-container {
+    background-color: #ffffff;
+    border-bottom: 1px solid #000000;
+}
+
+body.alto-contraste .acessibilidade-container button {
+    background: #e0e0e0 !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+body.alto-contraste .badge {
+    background: rgba(0, 122, 110, 0.15) !important;
+    color: #007a6e !important;
+}
