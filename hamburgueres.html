@@ -186,32 +186,36 @@
     <script src="js/fonte-acessibilidade.js"></script>
     <script>
         const mapaDetalhes = {
-            "pyburguer":        "detalhe-pyburguer.html",
+            "pyburguer":         "detalhe-pyburguer.html",
             "fullstack-burguer": "detalhe-fullstack-burguer.html",
-            "cpp-burguer":      "detalhe-cpp-burguer.html",
-            "bacon":            "detalhe-bacon.html"
+            "cpp-burguer":       "detalhe-cpp-burguer.html",
+            "bacon":             "detalhe-bacon.html"
         };
 
         document.querySelectorAll('.item-card[data-produto]').forEach(card => {
             card.style.cursor = 'pointer';
+            card.setAttribute('tabindex', '0');
 
-            // Só redireciona se o clique não for no coração
+            function navegar() {
+                const destino = mapaDetalhes[card.dataset.produto];
+                if (destino) window.location.href = destino;
+            }
+
             card.addEventListener('click', function(e) {
                 if (e.target.classList.contains('heart-icon')) return;
-                const destino = mapaDetalhes[this.dataset.produto];
-                if (destino) window.location.href = destino;
+                navegar();
+            });
+
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navegar(); }
             });
         });
 
-        // Coração focável pelo teclado
         document.querySelectorAll('.heart-icon').forEach(heart => {
             heart.setAttribute('tabindex', '0');
             heart.setAttribute('role', 'button');
             heart.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    heart.click();
-                }
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); heart.click(); }
             });
         });
     </script>
