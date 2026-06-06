@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localhost - Sobre Nós</title>
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="cardapio.css">
+    <link rel="stylesheet" href="header-style.css">
+    <link rel="stylesheet" href="contraste.css">
+    <link rel="stylesheet" href="sobre.css">
+</head>
+<body>
+    <script>
+        if (localStorage.getItem('altoContraste') === 'true') {
+            document.body.classList.add('alto-contraste');
+            document.addEventListener('DOMContentLoaded', function() {
+                const logo = document.querySelector('.header-logo-card img');
+                if (logo) logo.src = 'img/localhost_2.png';
+            });
+        }
+    </script>
+
+    <header>
+        <div class="header-logo-wrap">
+            <div class="header-logo-card">
+                <a href="index.html" aria-label="Localhost — Início">
+                    <img src="img/localhost_1.png" alt="Logo LocalHost">
+                </a>
+            </div>
+        </div>
+
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+        <nav class="header-nav" aria-label="Navegação principal">
+            <a href="javascript:history.back()" class="voltar-btn" aria-label="Voltar">← Voltar</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Acessibilidade -->
+        <div class="acessibilidade-container" role="toolbar" aria-label="Opções de acessibilidade">
+            <button id="toggleFonte">Modo Leitura</button>
+            <button id="aumentarFonte">A+</button>
+            <button id="diminuirFonte">A-</button>
+            <button
+                id="btn-contraste"
+                class="btn-contraste"
+                onclick="toggleContraste()"
+                aria-pressed="false"
+                title="Ativar alto contraste">
+            </button>
+        </div>
+
+        <!-- ── HERO ───────────────────────────────────────── -->
+        <section class="sobre-hero" aria-labelledby="titulo-sobre">
+            <span class="badge">// sobre_nos.md</span>
+            <h1 id="titulo-sobre">Bem-vindo ao<br><span>Local</span>host</h1>
+
+            <!-- Descrição em forma de terminal -->
+            <div class="terminal-box" role="img" aria-label="Descrição do projeto em estilo de código">
+                <div class="terminal-topbar" aria-hidden="true">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="terminal-filename">readme.md — localhost</span>
+                </div>
+                <div class="terminal-body" aria-hidden="true">
+                    <span class="t-comment">/**</span><br>
+                    <span class="t-comment">&nbsp;* @project  LocalHost</span><br>
+                    <span class="t-comment">&nbsp;* @version  1.0.0</span><br>
+                    <span class="t-comment">&nbsp;* @desc     Cardápio digital de uma lanchonete</span><br>
+                    <span class="t-comment">&nbsp;*           temática de programação.</span><br>
+                    <span class="t-comment">&nbsp;*/</span><br><br>
+                    <span class="t-key">const</span> <span class="t-white">projeto</span> = {<br>
+                    &nbsp;&nbsp;<span class="t-teal">nome</span>: <span class="t-str">"LocalHost"</span>,<br>
+                    &nbsp;&nbsp;<span class="t-teal">tema</span>: <span class="t-str">"Lanchonete &amp; Programação"</span>,<br>
+                    &nbsp;&nbsp;<span class="t-teal">foco</span>: <span class="t-str">"Acessibilidade &amp; Experiência"</span>,<br>
+                    &nbsp;&nbsp;<span class="t-teal">status</span>: <span class="t-str">"200 OK 🚀"</span><br>
+                    };
+                </div>
+            </div>
+
+            <!-- Texto acessível equivalente -->
+            <p class="sobre-texto">
+                O LocalHost é um cardápio digital interativo para uma lanchonete temática de programação.
+                Criado com foco em acessibilidade, combina a cultura dev com uma experiência de pedido simples e inclusiva.
+            </p>
+        </section>
+
+        <!-- ── OBJETIVO ───────────────────────────────────── -->
+        <section class="secao" aria-labelledby="titulo-objetivo">
+            <h2 class="secao-titulo" id="titulo-objetivo">Nosso Objetivo</h2>
+            <div class="objetivo-card">
+                <p>
+                    Resolver a falta de cardápios digitais acessíveis em ambientes de lanchonete,
+                    oferecendo uma plataforma que combina navegação intuitiva, suporte a libras via VLibras,
+                    alto contraste, ajuste de fonte e uma identidade visual única voltada à cultura de desenvolvimento de software.
+                </p>
+            </div>
+        </section>
+
+        <!-- ── TECNOLOGIAS ────────────────────────────────── -->
+        <section class="secao" aria-labelledby="titulo-tech">
+            <h2 class="secao-titulo" id="titulo-tech">Tecnologias</h2>
+            <div class="tech-grid" role="list">
+                <div class="tech-item" role="listitem">
+                    <span class="tech-icon" aria-hidden="true">&lt;/&gt;</span>
+                    <div class="tech-info">
+                        <span class="tech-nome">HTML5</span>
+                        <span class="tech-desc">// estrutura</span>
+                    </div>
+                </div>
+                <div class="tech-item" role="listitem">
+                    <span class="tech-icon" aria-hidden="true">{ }</span>
+                    <div class="tech-info">
+                        <span class="tech-nome">CSS3</span>
+                        <span class="tech-desc">// estilo</span>
+                    </div>
+                </div>
+                <div class="tech-item" role="listitem">
+                    <span class="tech-icon" aria-hidden="true">JS</span>
+                    <div class="tech-info">
+                        <span class="tech-nome">JavaScript</span>
+                        <span class="tech-desc">// interação</span>
+                    </div>
+                </div>
+                <div class="tech-item" role="listitem">
+                    <span class="tech-icon" aria-hidden="true">◈</span>
+                    <div class="tech-info">
+                        <span class="tech-nome">VLibras</span>
+                        <span class="tech-desc">// acessibilidade</span>
+                    </div>
+                </div>
+                <div class="tech-item" role="listitem">
+                    <span class="tech-icon" aria-hidden="true">Aa</span>
+                    <div class="tech-info">
+                        <span class="tech-nome">Fira Code</span>
+                        <span class="tech-desc">// tipografia</span>
+                    </div>
+                </div>
+                <div class="tech-item" role="listitem">
+                    <span class="tech-icon" aria-hidden="true">☁</span>
+                    <div class="tech-info">
+                        <span class="tech-nome">Google Fonts</span>
+                        <span class="tech-desc">// fontes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── EQUIPE ─────────────────────────────────────── -->
+        <section class="secao" aria-labelledby="titulo-equipe">
+            <h2 class="secao-titulo" id="titulo-equipe">Equipe</h2>
+            <ul class="equipe-lista" role="list">
+
+                <!-- Membro 1 -->
+                <li class="membro-card" role="listitem">
+                    <a href="https://github.com/danvitorlima" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Danilo Lima" style="display: contents">
+                        <div class="membro-avatar" aria-hidden="true">DN</div>
+                        <div class="membro-info">
+                            <p class="membro-nome">Danilo Lima</p>
+                            <p class="membro-funcao">// VLibras &amp; Integração</p>
+                        </div>
+                        <span class="membro-tag">Dev</span>
+                    </a>
+                </li>
+
+                <!-- Membro 2 -->
+                <li class="membro-card" role="listitem">
+                    <a href="https://github.com/igorafael19" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Igor Rafael" style="display: contents">
+                        <div class="membro-avatar" aria-hidden="true">
+                            <img src="./img/equipe/igor-foto.jpeg" alt="Igor Rafael" class="membro-foto">
+                        </div>
+                        <div class="membro-info">
+                            <p class="membro-nome">Igor Rafael</p>
+                            <p class="membro-funcao">// Front-end &amp; Acessibilidade</p>
+                        </div>
+                        <span class="membro-tag">Dev</span>
+                    </a>
+                </li>
+
+
+                <!-- Membro 3 -->
+                <li class="membro-card" role="listitem">
+                    <a href="https://github.com/PauluCiesar" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Paulo César" style="display: contents">
+                        <div class="membro-avatar" aria-hidden="true">PC</div>
+                        <div class="membro-info">
+                            <p class="membro-nome">Paulo César</p>
+                            <p class="membro-funcao">// Front-end & Acessibilidade</p>
+                        </div>
+                        <span class="membro-tag">Dev</span>
+                    </a>
+                </li>
+
+                <!-- Membro 4 -->
+                <li class="membro-card" role="listitem">
+                    <a href="https://github.com/Hero13254" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ricardo Antônio" style="display: contents">
+                        <div class="membro-avatar" aria-hidden="true">RA</div>
+                        <div class="membro-info">
+                            <p class="membro-nome">Ricardo Antônio</p>
+                            <p class="membro-funcao">// ??</p>
+                        </div>
+                        <span class="membro-tag">Dev</span>
+                    </a>
+                </li>
+
+                <!-- Membro 5 -->
+                <li class="membro-card" role="listitem">
+                    <a href="https://github.com/Welberth77" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Welberth Oliveira" style="display: contents">
+                        <div class="membro-avatar" aria-hidden="true">
+                            <img src="./img/equipe/welberth.jpg" alt="Welberth Oliveira" class="membro-foto">
+                        </div>
+                        <div class="membro-info">
+                            <p class="membro-nome">Welberth Oliveira</p>
+                            <p class="membro-funcao">// Front-end & Acessibilidade</p>
+                        </div>
+                        <span class="membro-tag">Dev</span>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- ── RODAPÉ ─────────────────────────────────────── -->
+        <footer class="sobre-footer" role="contentinfo">
+            <p>localhost © 2026 &nbsp;·&nbsp; feito com muito <span>café()</span></p>
+        </footer>
+    </main>
+
+    <script src="js/fonte-acessibilidade.js"></script>
+    <script src="js/sobre-acessibilidade.js"></script>
+    <script src="contraste.js"></script>
+</body>
+</html>

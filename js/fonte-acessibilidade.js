@@ -32,7 +32,7 @@ if(toggleFonte && aumentarFonte && diminuirFonte){
     function atualizarFonte(){
 
         document.querySelectorAll(
-            '.code-descricao, .texto-descricao, .nav-tab, h2, h3'
+            '.code-descricao, .texto-descricao, .nav-tab, h2, h3, .rodape a'
         )
         .forEach(item => {
 
@@ -51,6 +51,12 @@ if(toggleFonte && aumentarFonte && diminuirFonte){
             else if(item.tagName === 'H3'){
 
                 item.style.fontSize = (tamanhoFonte + 10) + 'px';
+
+            }
+
+            else if(item.classList.contains('rodape')){
+
+                item.style.fontSize = tamanhoFonte + 'px';
 
             }
 

@@ -199,3 +199,35 @@ h3 {
     transform: none;
     box-shadow: none;
 }
+
+/* =========================
+   RODAPÉ
+========================= */
+ 
+.rodape {
+    background-color: #1e1e1e;
+    padding: 10px;
+    text-align: center;
+}
+ 
+.rodape a {
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6e6e6e;
+    text-decoration: none;
+    transition: color 150ms ease-out;
+}
+ 
+.rodape a:hover {
+    color: #03dac6;
+}
+ 
+/* Alto contraste */
+body.alto-contraste .rodape {
+    background-color: #e0e0e0 !important;
+}
+ 
+body.alto-contraste .rodape a {
+    color: #333333 !important;
+}
