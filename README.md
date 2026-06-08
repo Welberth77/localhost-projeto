@@ -6,7 +6,7 @@
 
 ## Descrição do Projeto
 
-O **LocalHost** é um cardápio digital interativo com identidade visual inspirada no universo da programação. Os produtos — hambúrgueres, pizzas, bebidas e acompanhamentos — são nomeados e descritos com referências a linguagens de programação, frameworks e conceitos de tecnologia, criando uma experiência temática e divertida para o público dev.
+O **LocalHost** é um cardápio digital interativo com identidade visual inspirada no universo da programação. Os produtos - hambúrgueres, pizzas, bebidas e acompanhamentos - são nomeados e descritos com referências a linguagens de programação, frameworks e conceitos de tecnologia, criando uma experiência temática e divertida para o público dev.
 
 O projeto foi desenvolvido com foco em **acessibilidade**, garantindo que diferentes perfis de usuário possam navegar e interagir com o cardápio de forma inclusiva.
 
@@ -30,17 +30,17 @@ O projeto foi desenvolvido com foco em **acessibilidade**, garantindo que difere
 - **Página de detalhe** individual para cada produto com imagem, descrição temática (em código), preço e quantidade
 
 ### Acessibilidade
-- **Navegação completa pelo teclado** — todos os elementos recebem foco com `Tab`, `Enter` e `Espaço`
-- **Foco visível** — anel de foco em todos os elementos interativos
-- **Alto contraste** — modo de alto contraste ativável para usuários com baixa visão
-- **Ajuste de fonte** — botões A+, A- e Modo Leitura para personalizar o tamanho do texto
-- **VLibras** — integração com o plugin de acessibilidade em Língua Brasileira de Sinais (Libras)
+- **Navegação completa pelo teclado** - todos os elementos recebem foco com `Tab`, `Enter` e `Espaço`
+- **Foco visível** - anel de foco em todos os elementos interativos
+- **Alto contraste** - modo de alto contraste ativável para usuários com baixa visão
+- **Ajuste de fonte** - botões A+, A- e Modo Leitura para personalizar o tamanho do texto
+- **VLibras** - integração com o plugin de acessibilidade em Língua Brasileira de Sinais (Libras)
 - **Descrições acessíveis** nos produtos além das descrições temáticas em código
 
 ### Interatividade
 - **Favoritar produtos** com ícone de coração (toggle cheio/vazio)
-- **Controle de quantidade** na página de detalhe (botões + e −)
-- **Área de commit** — campo para o usuário escrever uma mensagem temática
+- **Controle de quantidade** na página de detalhe (botões + e -)
+- **Área de commit** - campo para o usuário escrever uma mensagem temática
 
 ---
 
@@ -67,13 +67,13 @@ Para enriquecer a experiência do usuário e reforçar a identidade tecnológica
 1. **Tela Inicial (Home):**
    Na página inicial, criamos uma animação de entrada com efeito **glitch** na logo, simulando distorção digital ao carregar. O botão "Cardápio digital" surge com um leve efeito de deslizamento e passa a exibir um **pulso de brilho contínuo** em ciano, chamando a atenção do usuário. Ao fundo, um **efeito matrix** exibe caracteres e símbolos de código caindo verticalmente dentro do layout, reforçando a identidade dev do projeto.
 
-2. **Página Sobre Nós — Timeline de Entrada (Hero Section):**
+2. **Página Sobre Nós - Timeline de Entrada (Hero Section):**
    Ao carregar a página, criamos uma sequência cronometrada (`gsap.timeline`) onde o elemento `.badge` desliza de cima para baixo, seguido pelo título principal e o texto descritivo. Por fim, a `.terminal-box` surge com um leve efeito elástico (`back.out`), simulando a abertura de um terminal real.
 
-3. **Página Sobre Nós — Efeito Cascata (Stagger) com ScrollTrigger:**
+3. **Página Sobre Nós - Efeito Cascata (Stagger) com ScrollTrigger:**
    Para as seções de **Tecnologias** e **Equipe**, configuramos o carregamento sob demanda conforme o usuário rola a tela. Utilizamos a propriedade `stagger` para que cada card surja com uma fração de segundo de atraso em relação ao anterior, criando uma sensação visual de preenchimento fluido e dinâmico.
 
-4. **Página Sobre Nós — Interações de Hover:**
+4. **Página Sobre Nós - Interações de Hover:**
    Aproveitamos o motor de alta performance do GSAP para suavizar os estados de foco (`mouseenter`/`mouseleave`) nos cards de tecnologia, substituindo as transições nativas do CSS por um cálculo de escala gerenciável que evita quebras visuais (`overwrite: 'auto'`).
 
 ---
@@ -154,7 +154,7 @@ cardapiolocalhost/
 
 ## Como Executar
 
-O projeto é composto por arquivos estáticos — não requer instalação ou servidor.
+O projeto é composto por arquivos estáticos - não requer instalação ou servidor.
 
 1. Clone o repositório:
 ```bash
