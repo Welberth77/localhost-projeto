@@ -1,4 +1,4 @@
-# LocalHost — Cardápio Digital
+# LocalHost - Cardápio Digital
 
 > Cardápio digital temático para desenvolvedores, desenvolvido como projeto da disciplina de **Interface Humano-Computador (IHC)**.
 
