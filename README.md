@@ -177,13 +177,12 @@ git clone https://github.com/Welberth77/localhost-projeto.git
 
 ---
 
-## Integrantes
+## Integrantes e Responsabilidades
 
-| Nome |
+| Nome | Responsabilidades |
 |---|---|
-| Ricardo Antonio |
-| Welberth Oliveira | 
-| Danilo Lima |
-| Paulo Cesar | 
-| Igor Rafael |
-
+| **Danilo Lima** | Implementação do VLibras; animações da página Sobre Nós (timeline de entrada, efeito stagger com ScrollTrigger e interações de hover nos cards) |
+| **Welberth Oliveira** | Tela inicial; modo leitura; botões de aumento e diminuição de fonte; página de listagem dos produtos com legenda e preço; página Sobre Nós |
+| **Paulo Cesar** | Páginas de detalhe de cada produto; navegação completa por teclado; elaboração do README |
+| **Igor Rafael** | Cabeçalho das páginas; modo de alto contraste; animação da tela inicial (efeito glitch na logo, pulso do botão e efeito matrix) |
+| **Ricardo Antonio** | O peixe do projeto (nada) |
